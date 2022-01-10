@@ -1,0 +1,40 @@
+\hypertarget{dzip_2sink_8h}{}\doxysection{src/dzip/sink.h File Reference}
+\label{dzip_2sink_8h}\index{src/dzip/sink.h@{src/dzip/sink.h}}
+{\ttfamily \#include $<$stddef.\+h$>$}\newline
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}../range/def.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../window/def.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../convert/sink.\+h\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structconvert__sink}{convert\+\_\+sink}} $\ast$ \mbox{\hyperlink{dzip_2sink_8h_aba9d09274f3aac750e1a1159e6887910}{dzip\+\_\+deflate\+\_\+sink\+\_\+new}} (\mbox{\hyperlink{structconvert__sink}{convert\+\_\+sink}} $\ast$next, \mbox{\hyperlink{unionrange__const__unsigned__char}{range\+\_\+const\+\_\+unsigned\+\_\+char}} $\ast$contents)
+\begin{DoxyCompactList}\small\item\em Creates a new deflate sink. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+$<$
+
+Provides a writeable deflate interface that is compatible with the sink described in \mbox{\hyperlink{convert_2sink_8h}{convert/sink.\+h}} 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{dzip_2sink_8h_aba9d09274f3aac750e1a1159e6887910}\label{dzip_2sink_8h_aba9d09274f3aac750e1a1159e6887910}} 
+\index{sink.h@{sink.h}!dzip\_deflate\_sink\_new@{dzip\_deflate\_sink\_new}}
+\index{dzip\_deflate\_sink\_new@{dzip\_deflate\_sink\_new}!sink.h@{sink.h}}
+\doxysubsubsection{\texorpdfstring{dzip\_deflate\_sink\_new()}{dzip\_deflate\_sink\_new()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structconvert__sink}{convert\+\_\+sink}}$\ast$ dzip\+\_\+deflate\+\_\+sink\+\_\+new (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structconvert__sink}{convert\+\_\+sink}} $\ast$}]{next,  }\item[{\mbox{\hyperlink{unionrange__const__unsigned__char}{range\+\_\+const\+\_\+unsigned\+\_\+char}} $\ast$}]{contents }\end{DoxyParamCaption})}
+
+
+
+Creates a new deflate sink. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em next} & The sink to which deflated data will be written \\
+\hline
+{\em contents} & The contents that this sink will deflate \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The sink handle 
+\end{DoxyReturn}

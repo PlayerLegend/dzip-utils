@@ -1,0 +1,19 @@
+\hypertarget{vprintf_8h}{}\doxysection{src/window/vprintf.h File Reference}
+\label{vprintf_8h}\index{src/window/vprintf.h@{src/window/vprintf.h}}
+{\ttfamily \#include $<$stddef.\+h$>$}\newline
+{\ttfamily \#include $<$stdarg.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}../range/def.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}def.\+h\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{vprintf_8h_aa6b34849d5226bdd2f56ffa00a6e4d33}\label{vprintf_8h_aa6b34849d5226bdd2f56ffa00a6e4d33}} 
+long int \mbox{\hyperlink{vprintf_8h_aa6b34849d5226bdd2f56ffa00a6e4d33}{window\+\_\+vprintf}} (\mbox{\hyperlink{unionwindow__char}{window\+\_\+char}} $\ast$window, const char $\ast$format, va\+\_\+list ap)
+\begin{DoxyCompactList}\small\item\em A vprintf-\/like function that overwrites the contents of the given window. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{vprintf_8h_a52e99e4d7a7426fc5f03e010bdefe3d4}\label{vprintf_8h_a52e99e4d7a7426fc5f03e010bdefe3d4}} 
+long int \mbox{\hyperlink{vprintf_8h_a52e99e4d7a7426fc5f03e010bdefe3d4}{window\+\_\+vprintf\+\_\+append}} (\mbox{\hyperlink{unionwindow__char}{window\+\_\+char}} $\ast$window, const char $\ast$format, va\+\_\+list ap)
+\begin{DoxyCompactList}\small\item\em A vprintf-\/like function that appends its result to the given window. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This file provides vprintf-\/like functions that write to windows. 

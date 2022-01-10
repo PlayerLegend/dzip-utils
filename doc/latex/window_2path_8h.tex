@@ -1,0 +1,54 @@
+\hypertarget{window_2path_8h}{}\doxysection{src/window/path.h File Reference}
+\label{window_2path_8h}\index{src/window/path.h@{src/window/path.h}}
+{\ttfamily \#include $<$stddef.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}../range/def.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}def.\+h\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{window_2path_8h_a750742c1091144b14b5bc2d34c9b5c04}{window\+\_\+path\+\_\+cat}} (\mbox{\hyperlink{unionwindow__char}{window\+\_\+char}} $\ast$target, char sep, const \mbox{\hyperlink{unionrange__const__char}{range\+\_\+const\+\_\+char}} $\ast$append)
+\begin{DoxyCompactList}\small\item\em Appends the given path to the given window. Repeated separators between target and append will be resolved into a single separator. Appending to an empty window will result in a path beginning with the separator. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{window_2path_8h_a6e9c910f68d293e805bf48e766924b90}{window\+\_\+path\+\_\+resolve}} (\mbox{\hyperlink{unionwindow__char}{window\+\_\+char}} $\ast$target, char sep)
+\begin{DoxyCompactList}\small\item\em Simplifies a path as much as possible, i.\+e., a path a/b/../c would turn into a/c. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Provides functions for working with paths contained in windows 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{window_2path_8h_a750742c1091144b14b5bc2d34c9b5c04}\label{window_2path_8h_a750742c1091144b14b5bc2d34c9b5c04}} 
+\index{path.h@{path.h}!window\_path\_cat@{window\_path\_cat}}
+\index{window\_path\_cat@{window\_path\_cat}!path.h@{path.h}}
+\doxysubsubsection{\texorpdfstring{window\_path\_cat()}{window\_path\_cat()}}
+{\footnotesize\ttfamily void window\+\_\+path\+\_\+cat (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{unionwindow__char}{window\+\_\+char}} $\ast$}]{target,  }\item[{char}]{sep,  }\item[{const \mbox{\hyperlink{unionrange__const__char}{range\+\_\+const\+\_\+char}} $\ast$}]{append }\end{DoxyParamCaption})}
+
+
+
+Appends the given path to the given window. Repeated separators between target and append will be resolved into a single separator. Appending to an empty window will result in a path beginning with the separator. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em target} & The target window \\
+\hline
+{\em sep} & The path separator \\
+\hline
+{\em append} & The path to append \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{window_2path_8h_a6e9c910f68d293e805bf48e766924b90}\label{window_2path_8h_a6e9c910f68d293e805bf48e766924b90}} 
+\index{path.h@{path.h}!window\_path\_resolve@{window\_path\_resolve}}
+\index{window\_path\_resolve@{window\_path\_resolve}!path.h@{path.h}}
+\doxysubsubsection{\texorpdfstring{window\_path\_resolve()}{window\_path\_resolve()}}
+{\footnotesize\ttfamily void window\+\_\+path\+\_\+resolve (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{unionwindow__char}{window\+\_\+char}} $\ast$}]{target,  }\item[{char}]{sep }\end{DoxyParamCaption})}
+
+
+
+Simplifies a path as much as possible, i.\+e., a path a/b/../c would turn into a/c. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em target} & The target path \\
+\hline
+{\em sep} & The path separator \\
+\hline
+\end{DoxyParams}

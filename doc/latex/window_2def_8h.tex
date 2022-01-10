@@ -1,0 +1,53 @@
+\hypertarget{window_2def_8h}{}\doxysection{src/window/def.h File Reference}
+\label{window_2def_8h}\index{src/window/def.h@{src/window/def.h}}
+{\ttfamily \#include $<$stddef.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}../range/def.\+h\char`\"{}}\newline
+\doxysubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+union \mbox{\hyperlink{unionwindow__void}{window\+\_\+void}}
+\item 
+union \mbox{\hyperlink{unionwindow__char}{window\+\_\+char}}
+\item 
+union \mbox{\hyperlink{unionwindow__unsigned__char}{window\+\_\+unsigned\+\_\+char}}
+\item 
+union \mbox{\hyperlink{unionwindow__string}{window\+\_\+string}}
+\item 
+union \mbox{\hyperlink{unionwindow__const__string}{window\+\_\+const\+\_\+string}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{window_2def_8h_ae38288e5974d1e1fb16661973b2bf761}{window\+\_\+typedef}}(window\+\_\+type,  window\+\_\+name, ...)~    typedef union \{ struct \{ range\+\_\+\#\#window\+\_\+name region; range\+\_\+\#\#window\+\_\+name alloc; \}; \+\_\+\+\_\+\+VA\+\_\+\+ARGS\+\_\+\+\_\+; \} window\+\_\+\#\#window\+\_\+name;
+\begin{DoxyCompactList}\small\item\em Creates a typedef for a window. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{window_2def_8h_a51e0566ff9906036807d6ce3a45646bf}\label{window_2def_8h_a51e0566ff9906036807d6ce3a45646bf}} 
+\#define \mbox{\hyperlink{window_2def_8h_a51e0566ff9906036807d6ce3a45646bf}{window\+\_\+remaining}}(window)~( (window).alloc.\+end -\/ (window).region.\+end )
+\begin{DoxyCompactList}\small\item\em Evaluates to the number of unused indices after the window\textquotesingle{}s region. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{window_2def_8h_a99393dbcea05e83a172f0da44c3af120}\label{window_2def_8h_a99393dbcea05e83a172f0da44c3af120}} 
+\#define \mbox{\hyperlink{window_2def_8h_a99393dbcea05e83a172f0da44c3af120}{window\+\_\+rewrite}}(window)~( (window).region.\+begin = (window).region.\+end = (window).alloc.\+begin )
+\begin{DoxyCompactList}\small\item\em Resets the window\textquotesingle{}s region to be 0 indices wide and at the beginning of the window\textquotesingle{}s allocation. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Provides a definition for an arbitrarily resizeable and shiftable array of items. A window here is comprised of two ranges as defined in src/range.\+h. The \textquotesingle{}alloc\textquotesingle{} range of a window contains the total memory allocated to the window, and the \textquotesingle{}region\textquotesingle{} range of a window describes the used portion of the allocated memory. 
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{window_2def_8h_ae38288e5974d1e1fb16661973b2bf761}\label{window_2def_8h_ae38288e5974d1e1fb16661973b2bf761}} 
+\index{def.h@{def.h}!window\_typedef@{window\_typedef}}
+\index{window\_typedef@{window\_typedef}!def.h@{def.h}}
+\doxysubsubsection{\texorpdfstring{window\_typedef}{window\_typedef}}
+{\footnotesize\ttfamily \#define window\+\_\+typedef(\begin{DoxyParamCaption}\item[{}]{window\+\_\+type,  }\item[{}]{window\+\_\+name,  }\item[{}]{... }\end{DoxyParamCaption})~    typedef union \{ struct \{ range\+\_\+\#\#window\+\_\+name region; range\+\_\+\#\#window\+\_\+name alloc; \}; \+\_\+\+\_\+\+VA\+\_\+\+ARGS\+\_\+\+\_\+; \} window\+\_\+\#\#window\+\_\+name;}
+
+
+
+Creates a typedef for a window. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em window\+\_\+type} & The type of the window \\
+\hline
+{\em window\+\_\+name} & The name of the window, e.\+g. if int is given, then the resulting typedef will be called window\+\_\+int \\
+\hline
+{\em ...} & Additional member declarations to be placed in the resulting window type may optionally go here. These will be union members, and so will alias other members of the window. \\
+\hline
+\end{DoxyParams}

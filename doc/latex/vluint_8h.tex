@@ -1,0 +1,58 @@
+\hypertarget{vluint_8h}{}\doxysection{src/vluint/vluint.h File Reference}
+\label{vluint_8h}\index{src/vluint/vluint.h@{src/vluint/vluint.h}}
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}../range/def.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../window/def.\+h\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{vluint_8h_ab0fce8a44faa278746f5b804eb5b6d6c}{vluint\+\_\+write}} (\mbox{\hyperlink{unionwindow__unsigned__char}{window\+\_\+unsigned\+\_\+char}} $\ast$output, unsigned long long input)
+\begin{DoxyCompactList}\small\item\em This function appends an integer as a vluint to the window. \end{DoxyCompactList}\item 
+unsigned long long \mbox{\hyperlink{vluint_8h_afbdea2613964800385bc1721bf11d932}{vluint\+\_\+read}} (bool $\ast$error, \mbox{\hyperlink{unionrange__const__unsigned__char}{range\+\_\+const\+\_\+unsigned\+\_\+char}} $\ast$input)
+\begin{DoxyCompactList}\small\item\em This function reads a vluint from the given range, consuming the bytes that it reads. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Provides functions for reading and writing arbitrary length unsigned integers (very-\/long-\/unsigned-\/integer or vluint). These integers store 7 bits per byte, so this format can be space efficient for small numbers. 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{vluint_8h_afbdea2613964800385bc1721bf11d932}\label{vluint_8h_afbdea2613964800385bc1721bf11d932}} 
+\index{vluint.h@{vluint.h}!vluint\_read@{vluint\_read}}
+\index{vluint\_read@{vluint\_read}!vluint.h@{vluint.h}}
+\doxysubsubsection{\texorpdfstring{vluint\_read()}{vluint\_read()}}
+{\footnotesize\ttfamily unsigned long long vluint\+\_\+read (\begin{DoxyParamCaption}\item[{bool $\ast$}]{error,  }\item[{\mbox{\hyperlink{unionrange__const__unsigned__char}{range\+\_\+const\+\_\+unsigned\+\_\+char}} $\ast$}]{input }\end{DoxyParamCaption})}
+
+
+
+This function reads a vluint from the given range, consuming the bytes that it reads. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em error} & Will be set to true if an error occurs \\
+\hline
+{\em input} & The input range to be read \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The value of the integer read, or -\/1 if an error occurred 
+\end{DoxyReturn}
+\mbox{\Hypertarget{vluint_8h_ab0fce8a44faa278746f5b804eb5b6d6c}\label{vluint_8h_ab0fce8a44faa278746f5b804eb5b6d6c}} 
+\index{vluint.h@{vluint.h}!vluint\_write@{vluint\_write}}
+\index{vluint\_write@{vluint\_write}!vluint.h@{vluint.h}}
+\doxysubsubsection{\texorpdfstring{vluint\_write()}{vluint\_write()}}
+{\footnotesize\ttfamily void vluint\+\_\+write (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{unionwindow__unsigned__char}{window\+\_\+unsigned\+\_\+char}} $\ast$}]{output,  }\item[{unsigned long long}]{input }\end{DoxyParamCaption})}
+
+
+
+This function appends an integer as a vluint to the window. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em output} & The window to append the integer to. \\
+\hline
+{\em input} & The integer to store \\
+\hline
+\end{DoxyParams}

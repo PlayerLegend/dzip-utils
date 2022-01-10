@@ -1,0 +1,30 @@
+\hypertarget{convert_2fd_2source_8h}{}\doxysection{src/convert/fd/source.h File Reference}
+\label{convert_2fd_2source_8h}\index{src/convert/fd/source.h@{src/convert/fd/source.h}}
+{\ttfamily \#include $<$stddef.\+h$>$}\newline
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+{\ttfamily \#include $<$unistd.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}../../range/def.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../../window/def.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../source.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../sink.\+h\char`\"{}}\newline
+\doxysubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structfd__source}{fd\+\_\+source}}
+\begin{DoxyCompactList}\small\item\em A structure used for reading from a file descriptor using the interface described in \mbox{\hyperlink{convert_2source_8h}{convert/source.\+h}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{convert_2fd_2source_8h_ab37e48583b88d7d0f9dad66c723f7666}\label{convert_2fd_2source_8h_ab37e48583b88d7d0f9dad66c723f7666}} 
+typedef struct \mbox{\hyperlink{structfd__source}{fd\+\_\+source}} \mbox{\hyperlink{convert_2fd_2source_8h_ab37e48583b88d7d0f9dad66c723f7666}{fd\+\_\+source}}
+\begin{DoxyCompactList}\small\item\em A structure used for reading from a file descriptor using the interface described in \mbox{\hyperlink{convert_2source_8h}{convert/source.\+h}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{convert_2fd_2source_8h_a7a9e095381089e7f482606f1077f54bb}\label{convert_2fd_2source_8h_a7a9e095381089e7f482606f1077f54bb}} 
+\mbox{\hyperlink{structfd__source}{fd\+\_\+source}} \mbox{\hyperlink{convert_2fd_2source_8h_a7a9e095381089e7f482606f1077f54bb}{fd\+\_\+source\+\_\+init}} (int fd, \mbox{\hyperlink{unionwindow__unsigned__char}{window\+\_\+unsigned\+\_\+char}} $\ast$contents)
+\begin{DoxyCompactList}\small\item\em Initializes an \mbox{\hyperlink{structfd__source}{fd\+\_\+source}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Provides a source for reading from file descriptors 

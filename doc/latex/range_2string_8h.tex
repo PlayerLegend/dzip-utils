@@ -1,0 +1,126 @@
+\hypertarget{range_2string_8h}{}\doxysection{src/range/string.h File Reference}
+\label{range_2string_8h}\index{src/range/string.h@{src/range/string.h}}
+{\ttfamily \#include $<$stddef.\+h$>$}\newline
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}def.\+h\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+size\+\_\+t \mbox{\hyperlink{range_2string_8h_a92ebb27a0a7491ce8b85aa3cfbb6da92}{range\+\_\+strstr}} (const \mbox{\hyperlink{unionrange__const__char}{range\+\_\+const\+\_\+char}} $\ast$haystack, const \mbox{\hyperlink{unionrange__const__char}{range\+\_\+const\+\_\+char}} $\ast$needle)
+\begin{DoxyCompactList}\small\item\em This function is similar to strstr, but works on ranges instead of null terminated strings. It will search haystack for needle, and returns the offset of needle within haystack if needle is found. If needle is not found, it returns the width of haystack. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{range_2string_8h_abcfc5d8a6b5a1c9dbdcb8e057e7b5564}{range\+\_\+strchr}} (const \mbox{\hyperlink{unionrange__const__char}{range\+\_\+const\+\_\+char}} $\ast$haystack, char needle)
+\begin{DoxyCompactList}\small\item\em This function is similar to strchr, but works on ranges instead of null terminated strings. It will search haystack for needle, and returns the offset of needle within haystack if needle is found. If needle is not found, it returns the width of haystack. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{range_2string_8h_a43086d27fbe13a49816057ff44ddda85}\label{range_2string_8h_a43086d27fbe13a49816057ff44ddda85}} 
+bool \mbox{\hyperlink{range_2string_8h_a43086d27fbe13a49816057ff44ddda85}{range\+\_\+streq}} (const \mbox{\hyperlink{unionrange__const__char}{range\+\_\+const\+\_\+char}} $\ast$a, const \mbox{\hyperlink{unionrange__const__char}{range\+\_\+const\+\_\+char}} $\ast$b)
+\begin{DoxyCompactList}\small\item\em Returns true if the range strings a and b match or false if they do not. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{range_2string_8h_a97dd7b656afa5288a7558fdd02f1afa4}\label{range_2string_8h_a97dd7b656afa5288a7558fdd02f1afa4}} 
+bool \mbox{\hyperlink{range_2string_8h_a97dd7b656afa5288a7558fdd02f1afa4}{range\+\_\+streq\+\_\+string}} (const \mbox{\hyperlink{unionrange__const__char}{range\+\_\+const\+\_\+char}} $\ast$a, const char $\ast$b)
+\begin{DoxyCompactList}\small\item\em Works like range\+\_\+streq, except that one parameter is a null terminated string. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{range_2string_8h_a052b2933227b518e8b443c37893f50d4}{range\+\_\+atozd}} (size\+\_\+t $\ast$restrict output, const \mbox{\hyperlink{unionrange__const__char}{range\+\_\+const\+\_\+char}} $\ast$restrict input)
+\begin{DoxyCompactList}\small\item\em Works like atozd, but instead of a null terminated string, this function uses a range string. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{range_2string_8h_a8a7d855f88232a94afc25786aa0f2d1e}\label{range_2string_8h_a8a7d855f88232a94afc25786aa0f2d1e}} 
+size\+\_\+t \mbox{\hyperlink{range_2string_8h_a8a7d855f88232a94afc25786aa0f2d1e}{range\+\_\+strstr\+\_\+string}} (const \mbox{\hyperlink{unionrange__const__char}{range\+\_\+const\+\_\+char}} $\ast$haystack, const char $\ast$needle)
+\begin{DoxyCompactList}\small\item\em Works like range\+\_\+strstr, except that the search query is a null terminated string instead of a range string. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{range_2string_8h_a74cc95f87023e6a9c7183051fa3c4248}\label{range_2string_8h_a74cc95f87023e6a9c7183051fa3c4248}} 
+char $\ast$ \mbox{\hyperlink{range_2string_8h_a74cc95f87023e6a9c7183051fa3c4248}{range\+\_\+strdup\+\_\+to\+\_\+string}} (const \mbox{\hyperlink{unionrange__const__char}{range\+\_\+const\+\_\+char}} $\ast$input)
+\begin{DoxyCompactList}\small\item\em Copies the given range string into a new null terminated string. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{range_2string_8h_a8a03f15ce87890362a8831126809a0d4}{range\+\_\+strdup}} (\mbox{\hyperlink{unionrange__char}{range\+\_\+char}} $\ast$result, \mbox{\hyperlink{unionrange__const__char}{range\+\_\+const\+\_\+char}} $\ast$input)
+\item 
+void \mbox{\hyperlink{range_2string_8h_af81a09b5a659966015f73941969406fb}{range\+\_\+string\+\_\+init}} (\mbox{\hyperlink{unionrange__const__char}{range\+\_\+const\+\_\+char}} $\ast$target, const char $\ast$input)
+\item 
+bool \mbox{\hyperlink{range_2string_8h_a22323eb7181850e8acb3a73ab09117b3}{range\+\_\+string\+\_\+tokenize}} (\mbox{\hyperlink{unionrange__const__char}{range\+\_\+const\+\_\+char}} $\ast$token, const char delim, \mbox{\hyperlink{unionrange__const__char}{range\+\_\+const\+\_\+char}} $\ast$input)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Provides functionality for working with strings using the \mbox{\hyperlink{unionrange__char}{range\+\_\+char}} type described in \mbox{\hyperlink{range_2def_8h}{range/def.\+h}} 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{range_2string_8h_a052b2933227b518e8b443c37893f50d4}\label{range_2string_8h_a052b2933227b518e8b443c37893f50d4}} 
+\index{string.h@{string.h}!range\_atozd@{range\_atozd}}
+\index{range\_atozd@{range\_atozd}!string.h@{string.h}}
+\doxysubsubsection{\texorpdfstring{range\_atozd()}{range\_atozd()}}
+{\footnotesize\ttfamily size\+\_\+t range\+\_\+atozd (\begin{DoxyParamCaption}\item[{size\+\_\+t $\ast$restrict}]{output,  }\item[{const \mbox{\hyperlink{unionrange__const__char}{range\+\_\+const\+\_\+char}} $\ast$restrict}]{input }\end{DoxyParamCaption})}
+
+
+
+Works like atozd, but instead of a null terminated string, this function uses a range string. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em output} & The resulting integer \\
+\hline
+{\em input} & The input string to parse \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{range_2string_8h_abcfc5d8a6b5a1c9dbdcb8e057e7b5564}\label{range_2string_8h_abcfc5d8a6b5a1c9dbdcb8e057e7b5564}} 
+\index{string.h@{string.h}!range\_strchr@{range\_strchr}}
+\index{range\_strchr@{range\_strchr}!string.h@{string.h}}
+\doxysubsubsection{\texorpdfstring{range\_strchr()}{range\_strchr()}}
+{\footnotesize\ttfamily size\+\_\+t range\+\_\+strchr (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{unionrange__const__char}{range\+\_\+const\+\_\+char}} $\ast$}]{haystack,  }\item[{char}]{needle }\end{DoxyParamCaption})}
+
+
+
+This function is similar to strchr, but works on ranges instead of null terminated strings. It will search haystack for needle, and returns the offset of needle within haystack if needle is found. If needle is not found, it returns the width of haystack. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em haystack} & The string range to search \\
+\hline
+{\em needle} & The search query to match in haystack \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{range_2string_8h_a8a03f15ce87890362a8831126809a0d4}\label{range_2string_8h_a8a03f15ce87890362a8831126809a0d4}} 
+\index{string.h@{string.h}!range\_strdup@{range\_strdup}}
+\index{range\_strdup@{range\_strdup}!string.h@{string.h}}
+\doxysubsubsection{\texorpdfstring{range\_strdup()}{range\_strdup()}}
+{\footnotesize\ttfamily void range\+\_\+strdup (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{unionrange__char}{range\+\_\+char}} $\ast$}]{result,  }\item[{\mbox{\hyperlink{unionrange__const__char}{range\+\_\+const\+\_\+char}} $\ast$}]{input }\end{DoxyParamCaption})}
+
+Copies the given range string into a new range string 
+\begin{DoxyParams}{Parameters}
+{\em result} & The new string to be allocated \\
+\hline
+{\em input} & The reference string to copy \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{range_2string_8h_af81a09b5a659966015f73941969406fb}\label{range_2string_8h_af81a09b5a659966015f73941969406fb}} 
+\index{string.h@{string.h}!range\_string\_init@{range\_string\_init}}
+\index{range\_string\_init@{range\_string\_init}!string.h@{string.h}}
+\doxysubsubsection{\texorpdfstring{range\_string\_init()}{range\_string\_init()}}
+{\footnotesize\ttfamily void range\+\_\+string\+\_\+init (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{unionrange__const__char}{range\+\_\+const\+\_\+char}} $\ast$}]{target,  }\item[{const char $\ast$}]{input }\end{DoxyParamCaption})}
+
+Initializes a range string from a null terminated string \mbox{\Hypertarget{range_2string_8h_a22323eb7181850e8acb3a73ab09117b3}\label{range_2string_8h_a22323eb7181850e8acb3a73ab09117b3}} 
+\index{string.h@{string.h}!range\_string\_tokenize@{range\_string\_tokenize}}
+\index{range\_string\_tokenize@{range\_string\_tokenize}!string.h@{string.h}}
+\doxysubsubsection{\texorpdfstring{range\_string\_tokenize()}{range\_string\_tokenize()}}
+{\footnotesize\ttfamily bool range\+\_\+string\+\_\+tokenize (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{unionrange__const__char}{range\+\_\+const\+\_\+char}} $\ast$}]{token,  }\item[{const char}]{delim,  }\item[{\mbox{\hyperlink{unionrange__const__char}{range\+\_\+const\+\_\+char}} $\ast$}]{input }\end{DoxyParamCaption})}
+
+Iterates through tokens in the input. The begin pointer of the input string will be moved forward by this function. 
+\begin{DoxyParams}{Parameters}
+{\em token} & The resulting token \\
+\hline
+{\em delim} & The delimiter to use \\
+\hline
+{\em input} & The input string \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if a new token was found, false if input is exhausted 
+\end{DoxyReturn}
+\mbox{\Hypertarget{range_2string_8h_a92ebb27a0a7491ce8b85aa3cfbb6da92}\label{range_2string_8h_a92ebb27a0a7491ce8b85aa3cfbb6da92}} 
+\index{string.h@{string.h}!range\_strstr@{range\_strstr}}
+\index{range\_strstr@{range\_strstr}!string.h@{string.h}}
+\doxysubsubsection{\texorpdfstring{range\_strstr()}{range\_strstr()}}
+{\footnotesize\ttfamily size\+\_\+t range\+\_\+strstr (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{unionrange__const__char}{range\+\_\+const\+\_\+char}} $\ast$}]{haystack,  }\item[{const \mbox{\hyperlink{unionrange__const__char}{range\+\_\+const\+\_\+char}} $\ast$}]{needle }\end{DoxyParamCaption})}
+
+
+
+This function is similar to strstr, but works on ranges instead of null terminated strings. It will search haystack for needle, and returns the offset of needle within haystack if needle is found. If needle is not found, it returns the width of haystack. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em haystack} & The string range to search \\
+\hline
+{\em needle} & The search query to match in haystack \\
+\hline
+\end{DoxyParams}

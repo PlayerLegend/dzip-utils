@@ -1,0 +1,39 @@
+\hypertarget{getline_8h}{}\doxysection{src/convert/getline.h File Reference}
+\label{getline_8h}\index{src/convert/getline.h@{src/convert/getline.h}}
+{\ttfamily \#include $<$stddef.\+h$>$}\newline
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}../range/def.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../window/def.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}source.\+h\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{getline_8h_a61c1869db54c39948f56c2f534f61d1f}{convert\+\_\+getline}} (bool $\ast$error, \mbox{\hyperlink{unionrange__const__char}{range\+\_\+const\+\_\+char}} $\ast$line, \mbox{\hyperlink{structconvert__source}{convert\+\_\+source}} $\ast$source, const \mbox{\hyperlink{unionrange__const__char}{range\+\_\+const\+\_\+char}} $\ast$end\+\_\+sequence)
+\begin{DoxyCompactList}\small\item\em Reads a line from \textquotesingle{}source\textquotesingle{} and places its contents in \textquotesingle{}line\textquotesingle{}, consuming the line\textquotesingle{}s bytes from source\textquotesingle{}s contents. Resulting lines will not contain their line end sequences. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Provides the convert\+\_\+getline function 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{getline_8h_a61c1869db54c39948f56c2f534f61d1f}\label{getline_8h_a61c1869db54c39948f56c2f534f61d1f}} 
+\index{getline.h@{getline.h}!convert\_getline@{convert\_getline}}
+\index{convert\_getline@{convert\_getline}!getline.h@{getline.h}}
+\doxysubsubsection{\texorpdfstring{convert\_getline()}{convert\_getline()}}
+{\footnotesize\ttfamily bool convert\+\_\+getline (\begin{DoxyParamCaption}\item[{bool $\ast$}]{error,  }\item[{\mbox{\hyperlink{unionrange__const__char}{range\+\_\+const\+\_\+char}} $\ast$}]{line,  }\item[{\mbox{\hyperlink{structconvert__source}{convert\+\_\+source}} $\ast$}]{source,  }\item[{const \mbox{\hyperlink{unionrange__const__char}{range\+\_\+const\+\_\+char}} $\ast$}]{end\+\_\+sequence }\end{DoxyParamCaption})}
+
+
+
+Reads a line from \textquotesingle{}source\textquotesingle{} and places its contents in \textquotesingle{}line\textquotesingle{}, consuming the line\textquotesingle{}s bytes from source\textquotesingle{}s contents. Resulting lines will not contain their line end sequences. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em error} & Will be set to true if an error occurs \\
+\hline
+{\em line} & The range that will be set to contain the next input line \\
+\hline
+{\em source} & The source to read from \\
+\hline
+{\em end\+\_\+sequence} & A range string describing a line end sequence \\
+\hline
+\end{DoxyParams}

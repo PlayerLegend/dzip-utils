@@ -1,0 +1,65 @@
+\hypertarget{inflate_8h}{}\doxysection{src/dzip/inflate.h File Reference}
+\label{inflate_8h}\index{src/dzip/inflate.h@{src/dzip/inflate.h}}
+{\ttfamily \#include $<$stddef.\+h$>$}\newline
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}../range/def.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../window/def.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../convert/source.\+h\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{inflate_8h_a0052f0c9c6091f60d3f84147a6cc31a4}{dzip\+\_\+inflate\+\_\+chunk}} (bool $\ast$error, \mbox{\hyperlink{unionwindow__unsigned__char}{window\+\_\+unsigned\+\_\+char}} $\ast$output, \mbox{\hyperlink{structconvert__source}{convert\+\_\+source}} $\ast$source)
+\begin{DoxyCompactList}\small\item\em Inflates a single chunk from the given source stream and appends the resulting bytes to output. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{inflate_8h_aee155f82815d0908e2453b0ef9210c4e}{dzip\+\_\+inflate\+\_\+all}} (bool $\ast$error, \mbox{\hyperlink{unionwindow__unsigned__char}{window\+\_\+unsigned\+\_\+char}} $\ast$output, \mbox{\hyperlink{structconvert__source}{convert\+\_\+source}} $\ast$source)
+\begin{DoxyCompactList}\small\item\em Inflates all chunks from the given source stream and appends the resulting bytes to output. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Provides functions for inflating chunks from a dzip stream 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{inflate_8h_aee155f82815d0908e2453b0ef9210c4e}\label{inflate_8h_aee155f82815d0908e2453b0ef9210c4e}} 
+\index{inflate.h@{inflate.h}!dzip\_inflate\_all@{dzip\_inflate\_all}}
+\index{dzip\_inflate\_all@{dzip\_inflate\_all}!inflate.h@{inflate.h}}
+\doxysubsubsection{\texorpdfstring{dzip\_inflate\_all()}{dzip\_inflate\_all()}}
+{\footnotesize\ttfamily bool dzip\+\_\+inflate\+\_\+all (\begin{DoxyParamCaption}\item[{bool $\ast$}]{error,  }\item[{\mbox{\hyperlink{unionwindow__unsigned__char}{window\+\_\+unsigned\+\_\+char}} $\ast$}]{output,  }\item[{\mbox{\hyperlink{structconvert__source}{convert\+\_\+source}} $\ast$}]{source }\end{DoxyParamCaption})}
+
+
+
+Inflates all chunks from the given source stream and appends the resulting bytes to output. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em error} & Set to true if an error occurs \\
+\hline
+{\em output} & The output window \\
+\hline
+{\em source} & The dzip source \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if all chunks were successfully read, false otherwise 
+\end{DoxyReturn}
+\mbox{\Hypertarget{inflate_8h_a0052f0c9c6091f60d3f84147a6cc31a4}\label{inflate_8h_a0052f0c9c6091f60d3f84147a6cc31a4}} 
+\index{inflate.h@{inflate.h}!dzip\_inflate\_chunk@{dzip\_inflate\_chunk}}
+\index{dzip\_inflate\_chunk@{dzip\_inflate\_chunk}!inflate.h@{inflate.h}}
+\doxysubsubsection{\texorpdfstring{dzip\_inflate\_chunk()}{dzip\_inflate\_chunk()}}
+{\footnotesize\ttfamily bool dzip\+\_\+inflate\+\_\+chunk (\begin{DoxyParamCaption}\item[{bool $\ast$}]{error,  }\item[{\mbox{\hyperlink{unionwindow__unsigned__char}{window\+\_\+unsigned\+\_\+char}} $\ast$}]{output,  }\item[{\mbox{\hyperlink{structconvert__source}{convert\+\_\+source}} $\ast$}]{source }\end{DoxyParamCaption})}
+
+
+
+Inflates a single chunk from the given source stream and appends the resulting bytes to output. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em error} & Set to true if an error occurs \\
+\hline
+{\em output} & The output window \\
+\hline
+{\em source} & The dzip source \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if a chunk was successfully read, false otherwise 
+\end{DoxyReturn}

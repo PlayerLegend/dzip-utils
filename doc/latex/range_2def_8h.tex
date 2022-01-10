@@ -1,0 +1,204 @@
+\hypertarget{range_2def_8h}{}\doxysection{src/range/def.h File Reference}
+\label{range_2def_8h}\index{src/range/def.h@{src/range/def.h}}
+{\ttfamily \#include $<$stddef.\+h$>$}\newline
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+\doxysubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+union \mbox{\hyperlink{unionrange__const__char}{range\+\_\+const\+\_\+char}}
+\item 
+union \mbox{\hyperlink{unionrange__char}{range\+\_\+char}}
+\item 
+union \mbox{\hyperlink{unionrange__const__unsigned__char}{range\+\_\+const\+\_\+unsigned\+\_\+char}}
+\item 
+union \mbox{\hyperlink{unionrange__unsigned__char}{range\+\_\+unsigned\+\_\+char}}
+\item 
+union \mbox{\hyperlink{unionrange__string}{range\+\_\+string}}
+\item 
+union \mbox{\hyperlink{unionrange__void}{range\+\_\+void}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{range_2def_8h_aeecedc4c28168c43d40043b000254fc7}{range}}(type)~    \{ type $\ast$begin; type $\ast$end; \}
+\begin{DoxyCompactList}\small\item\em The body of a range-\/type structure, it contains a begin and end pointer for the given type. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{range_2def_8h_a69cdee04f5e788e832c57e09261669aa}{range\+\_\+count}}(\mbox{\hyperlink{range_2def_8h_aeecedc4c28168c43d40043b000254fc7}{range}})~    ( (\mbox{\hyperlink{range_2def_8h_aeecedc4c28168c43d40043b000254fc7}{range}}).end -\/ (\mbox{\hyperlink{range_2def_8h_aeecedc4c28168c43d40043b000254fc7}{range}}).begin )
+\begin{DoxyCompactList}\small\item\em Evaluates to the number of elements in a range-\/like structure. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{range_2def_8h_a90dc4d74e8df5c4a209523ccc4d6f938}{range\+\_\+is\+\_\+empty}}(\mbox{\hyperlink{range_2def_8h_aeecedc4c28168c43d40043b000254fc7}{range}})~    ( (\mbox{\hyperlink{range_2def_8h_aeecedc4c28168c43d40043b000254fc7}{range}}).end $<$= (\mbox{\hyperlink{range_2def_8h_aeecedc4c28168c43d40043b000254fc7}{range}}).begin )
+\begin{DoxyCompactList}\small\item\em Evaluates to true if the range-\/like structure contains no items, false otherwise. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{range_2def_8h_a5a94f76bc5d13d68680217b63b7e05a2}{for\+\_\+range}}(iter\+\_\+name,  object)~    for (iter\+\_\+name = (object).begin; iter\+\_\+name != (object).end; iter\+\_\+name++)
+\begin{DoxyCompactList}\small\item\em A range-\/based for loop. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{range_2def_8h_a4018e3781e1f1e6022bd741234d47d3b}\label{range_2def_8h_a4018e3781e1f1e6022bd741234d47d3b}} 
+\#define \mbox{\hyperlink{range_2def_8h_a4018e3781e1f1e6022bd741234d47d3b}{for\+\_\+range\+\_\+redo}}(iter\+\_\+name)~    \{ (iter\+\_\+name)-\/-\/; continue; \}
+\begin{DoxyCompactList}\small\item\em When used within a for\+\_\+range loop, this causes the current loop to end and the subsequent loop to iterate over the current item again. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{range_2def_8h_aec0f31e5743e3dbdd879934e2883c57b}\label{range_2def_8h_aec0f31e5743e3dbdd879934e2883c57b}} 
+\#define \mbox{\hyperlink{range_2def_8h_aec0f31e5743e3dbdd879934e2883c57b}{range\+\_\+index}}(element,  container)~    ( (element) -\/ (container).begin )
+\begin{DoxyCompactList}\small\item\em Returns the index of the given element within the range. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{range_2def_8h_a057660400e156d8782ede2af8688399c}{range\+\_\+alloc}}(\mbox{\hyperlink{range_2def_8h_aeecedc4c28168c43d40043b000254fc7}{range}},  count)
+\begin{DoxyCompactList}\small\item\em Allocates the number of elements given by count within the given range. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{range_2def_8h_a946c3008cc7a9fef69176f63de3f7fc5}{range\+\_\+calloc}}(\mbox{\hyperlink{range_2def_8h_aeecedc4c28168c43d40043b000254fc7}{range}},  count)
+\begin{DoxyCompactList}\small\item\em Allocates the number of elements given by count within the given range, with the newly allocated elements all set to 0. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{range_2def_8h_ae935a039fbe07c8d35614bee81efe6f8}\label{range_2def_8h_ae935a039fbe07c8d35614bee81efe6f8}} 
+\#define \mbox{\hyperlink{range_2def_8h_ae935a039fbe07c8d35614bee81efe6f8}{range\+\_\+copy}}(dst,  src)
+\begin{DoxyCompactList}\small\item\em Copies the contents of the source array into the destination array. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{range_2def_8h_a1b9f13cc58c75e538e8f525ddeba0e8c}{range\+\_\+typedef}}(rangetype,  name, ...)
+\begin{DoxyCompactList}\small\item\em Creates non-\/const and const typedefs for the given range type that are of the form range\+\_\+\+NAME and range\+\_\+const\+\_\+\+NAME, where NAME is given by the name argument. Both structures will contain the usual begin and end members of a range object, but the non-\/const type will contain a const\+\_\+cast union member that acts as a const qualified alias to the parent. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{range_2def_8h_a8694d473dc41229e5a5f7e77da79c409}{RANGE\+\_\+\+FORMSPEC}}~\char`\"{}\%.$\ast$s\char`\"{}
+\item 
+\#define \mbox{\hyperlink{range_2def_8h_a3a42590bd7bee079cecbb70754b6dc67}{RANGE\+\_\+\+FORMSPEC\+\_\+\+ARG}}(\mbox{\hyperlink{range_2def_8h_aeecedc4c28168c43d40043b000254fc7}{range}})~((int)\mbox{\hyperlink{range_2def_8h_a69cdee04f5e788e832c57e09261669aa}{range\+\_\+count}}(\mbox{\hyperlink{range_2def_8h_aeecedc4c28168c43d40043b000254fc7}{range}})), (\mbox{\hyperlink{range_2def_8h_aeecedc4c28168c43d40043b000254fc7}{range}}).begin
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Describes a generic range data structure and associated operations. This range structure provides a begin and end pointer for demarcating a continuous portion of memory. 
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{range_2def_8h_a5a94f76bc5d13d68680217b63b7e05a2}\label{range_2def_8h_a5a94f76bc5d13d68680217b63b7e05a2}} 
+\index{def.h@{def.h}!for\_range@{for\_range}}
+\index{for\_range@{for\_range}!def.h@{def.h}}
+\doxysubsubsection{\texorpdfstring{for\_range}{for\_range}}
+{\footnotesize\ttfamily \#define for\+\_\+range(\begin{DoxyParamCaption}\item[{}]{iter\+\_\+name,  }\item[{}]{object }\end{DoxyParamCaption})~    for (iter\+\_\+name = (object).begin; iter\+\_\+name != (object).end; iter\+\_\+name++)}
+
+
+
+A range-\/based for loop. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em iter\+\_\+name} & Specifies the iterator to use. This iterator must be declared beforehand \\
+\hline
+{\em object} & Specifies the range-\/like structure to iterate over \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{range_2def_8h_aeecedc4c28168c43d40043b000254fc7}\label{range_2def_8h_aeecedc4c28168c43d40043b000254fc7}} 
+\index{def.h@{def.h}!range@{range}}
+\index{range@{range}!def.h@{def.h}}
+\doxysubsubsection{\texorpdfstring{range}{range}}
+{\footnotesize\ttfamily \#define range(\begin{DoxyParamCaption}\item[{}]{type }\end{DoxyParamCaption})~    \{ type $\ast$begin; type $\ast$end; \}}
+
+
+
+The body of a range-\/type structure, it contains a begin and end pointer for the given type. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em type} & The type of the resulting range structure \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{range_2def_8h_a057660400e156d8782ede2af8688399c}\label{range_2def_8h_a057660400e156d8782ede2af8688399c}} 
+\index{def.h@{def.h}!range\_alloc@{range\_alloc}}
+\index{range\_alloc@{range\_alloc}!def.h@{def.h}}
+\doxysubsubsection{\texorpdfstring{range\_alloc}{range\_alloc}}
+{\footnotesize\ttfamily \#define range\+\_\+alloc(\begin{DoxyParamCaption}\item[{}]{\mbox{\hyperlink{range_2def_8h_aeecedc4c28168c43d40043b000254fc7}{range}},  }\item[{}]{count }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{    \{                                   \(\backslash\)}
+\DoxyCodeLine{    (\mbox{\hyperlink{range_2def_8h_aeecedc4c28168c43d40043b000254fc7}{range}}).begin = malloc (\textcolor{keyword}{sizeof} (*(\mbox{\hyperlink{range_2def_8h_aeecedc4c28168c43d40043b000254fc7}{range}}).begin) * count); \(\backslash\)}
+\DoxyCodeLine{    (\mbox{\hyperlink{range_2def_8h_aeecedc4c28168c43d40043b000254fc7}{range}}).end = (\mbox{\hyperlink{range_2def_8h_aeecedc4c28168c43d40043b000254fc7}{range}}).begin + count;              \(\backslash\)}
+\DoxyCodeLine{    \}}
+
+\end{DoxyCode}
+
+
+Allocates the number of elements given by count within the given range. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em range} & The range in which to allocate elements \\
+\hline
+{\em count} & The number of elements to allocate \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{range_2def_8h_a946c3008cc7a9fef69176f63de3f7fc5}\label{range_2def_8h_a946c3008cc7a9fef69176f63de3f7fc5}} 
+\index{def.h@{def.h}!range\_calloc@{range\_calloc}}
+\index{range\_calloc@{range\_calloc}!def.h@{def.h}}
+\doxysubsubsection{\texorpdfstring{range\_calloc}{range\_calloc}}
+{\footnotesize\ttfamily \#define range\+\_\+calloc(\begin{DoxyParamCaption}\item[{}]{\mbox{\hyperlink{range_2def_8h_aeecedc4c28168c43d40043b000254fc7}{range}},  }\item[{}]{count }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{    \{                                   \(\backslash\)}
+\DoxyCodeLine{    (\mbox{\hyperlink{range_2def_8h_aeecedc4c28168c43d40043b000254fc7}{range}}).begin = calloc (count, \textcolor{keyword}{sizeof} (*(\mbox{\hyperlink{range_2def_8h_aeecedc4c28168c43d40043b000254fc7}{range}}).begin));      \(\backslash\)}
+\DoxyCodeLine{    (\mbox{\hyperlink{range_2def_8h_aeecedc4c28168c43d40043b000254fc7}{range}}).end = (\mbox{\hyperlink{range_2def_8h_aeecedc4c28168c43d40043b000254fc7}{range}}).begin + count;              \(\backslash\)}
+\DoxyCodeLine{    \}}
+
+\end{DoxyCode}
+
+
+Allocates the number of elements given by count within the given range, with the newly allocated elements all set to 0. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em range} & The range in which to allocate elements \\
+\hline
+{\em count} & The number of elements to allocate \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{range_2def_8h_a69cdee04f5e788e832c57e09261669aa}\label{range_2def_8h_a69cdee04f5e788e832c57e09261669aa}} 
+\index{def.h@{def.h}!range\_count@{range\_count}}
+\index{range\_count@{range\_count}!def.h@{def.h}}
+\doxysubsubsection{\texorpdfstring{range\_count}{range\_count}}
+{\footnotesize\ttfamily \#define range\+\_\+count(\begin{DoxyParamCaption}\item[{}]{\mbox{\hyperlink{range_2def_8h_aeecedc4c28168c43d40043b000254fc7}{range}} }\end{DoxyParamCaption})~    ( (\mbox{\hyperlink{range_2def_8h_aeecedc4c28168c43d40043b000254fc7}{range}}).end -\/ (\mbox{\hyperlink{range_2def_8h_aeecedc4c28168c43d40043b000254fc7}{range}}).begin )}
+
+
+
+Evaluates to the number of elements in a range-\/like structure. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em range} & The range to be counted \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{range_2def_8h_a8694d473dc41229e5a5f7e77da79c409}\label{range_2def_8h_a8694d473dc41229e5a5f7e77da79c409}} 
+\index{def.h@{def.h}!RANGE\_FORMSPEC@{RANGE\_FORMSPEC}}
+\index{RANGE\_FORMSPEC@{RANGE\_FORMSPEC}!def.h@{def.h}}
+\doxysubsubsection{\texorpdfstring{RANGE\_FORMSPEC}{RANGE\_FORMSPEC}}
+{\footnotesize\ttfamily \#define RANGE\+\_\+\+FORMSPEC~\char`\"{}\%.$\ast$s\char`\"{}}
+
+A printf format specifier for a character range \mbox{\Hypertarget{range_2def_8h_a3a42590bd7bee079cecbb70754b6dc67}\label{range_2def_8h_a3a42590bd7bee079cecbb70754b6dc67}} 
+\index{def.h@{def.h}!RANGE\_FORMSPEC\_ARG@{RANGE\_FORMSPEC\_ARG}}
+\index{RANGE\_FORMSPEC\_ARG@{RANGE\_FORMSPEC\_ARG}!def.h@{def.h}}
+\doxysubsubsection{\texorpdfstring{RANGE\_FORMSPEC\_ARG}{RANGE\_FORMSPEC\_ARG}}
+{\footnotesize\ttfamily \#define RANGE\+\_\+\+FORMSPEC\+\_\+\+ARG(\begin{DoxyParamCaption}\item[{}]{\mbox{\hyperlink{range_2def_8h_aeecedc4c28168c43d40043b000254fc7}{range}} }\end{DoxyParamCaption})~((int)\mbox{\hyperlink{range_2def_8h_a69cdee04f5e788e832c57e09261669aa}{range\+\_\+count}}(\mbox{\hyperlink{range_2def_8h_aeecedc4c28168c43d40043b000254fc7}{range}})), (\mbox{\hyperlink{range_2def_8h_aeecedc4c28168c43d40043b000254fc7}{range}}).begin}
+
+The accompanying printf argument for RANGE\+\_\+\+FORMSPEC \mbox{\Hypertarget{range_2def_8h_a90dc4d74e8df5c4a209523ccc4d6f938}\label{range_2def_8h_a90dc4d74e8df5c4a209523ccc4d6f938}} 
+\index{def.h@{def.h}!range\_is\_empty@{range\_is\_empty}}
+\index{range\_is\_empty@{range\_is\_empty}!def.h@{def.h}}
+\doxysubsubsection{\texorpdfstring{range\_is\_empty}{range\_is\_empty}}
+{\footnotesize\ttfamily \#define range\+\_\+is\+\_\+empty(\begin{DoxyParamCaption}\item[{}]{\mbox{\hyperlink{range_2def_8h_aeecedc4c28168c43d40043b000254fc7}{range}} }\end{DoxyParamCaption})~    ( (\mbox{\hyperlink{range_2def_8h_aeecedc4c28168c43d40043b000254fc7}{range}}).end $<$= (\mbox{\hyperlink{range_2def_8h_aeecedc4c28168c43d40043b000254fc7}{range}}).begin )}
+
+
+
+Evaluates to true if the range-\/like structure contains no items, false otherwise. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em range} & The range to be checked \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{range_2def_8h_a1b9f13cc58c75e538e8f525ddeba0e8c}\label{range_2def_8h_a1b9f13cc58c75e538e8f525ddeba0e8c}} 
+\index{def.h@{def.h}!range\_typedef@{range\_typedef}}
+\index{range\_typedef@{range\_typedef}!def.h@{def.h}}
+\doxysubsubsection{\texorpdfstring{range\_typedef}{range\_typedef}}
+{\footnotesize\ttfamily \#define range\+\_\+typedef(\begin{DoxyParamCaption}\item[{}]{rangetype,  }\item[{}]{name,  }\item[{}]{... }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{    \textcolor{keyword}{typedef} \textcolor{keyword}{union }\{ \textcolor{keyword}{struct }\mbox{\hyperlink{range_2def_8h_aeecedc4c28168c43d40043b000254fc7}{range}}(const rangetype); \_\_VA\_ARGS\_\_; \} range\_const\_\#\#name; \(\backslash\)}
+\DoxyCodeLine{    typedef \textcolor{keyword}{union }\{ \textcolor{keyword}{struct }range(rangetype); range\_const\_\#\#name const\_cast; \_\_VA\_ARGS\_\_; \} range\_\#\#name;}
+
+\end{DoxyCode}
+
+
+Creates non-\/const and const typedefs for the given range type that are of the form range\+\_\+\+NAME and range\+\_\+const\+\_\+\+NAME, where NAME is given by the name argument. Both structures will contain the usual begin and end members of a range object, but the non-\/const type will contain a const\+\_\+cast union member that acts as a const qualified alias to the parent. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em rangetype} & The type of the items contained within the range \\
+\hline
+{\em name} & The name to attach to the range \\
+\hline
+{\em ...} & Additional member declarations to be placed in the resulting range type may optionally go here. These will be union members, and so will overlap with the other members of the range, as the const\+\_\+cast member does. \\
+\hline
+\end{DoxyParams}

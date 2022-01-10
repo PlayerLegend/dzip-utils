@@ -1,0 +1,92 @@
+\hypertarget{convert_2sink_8h}{}\doxysection{src/convert/sink.h File Reference}
+\label{convert_2sink_8h}\index{src/convert/sink.h@{src/convert/sink.h}}
+{\ttfamily \#include $<$stddef.\+h$>$}\newline
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}../range/def.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../window/def.\+h\char`\"{}}\newline
+\doxysubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structconvert__sink}{convert\+\_\+sink}}
+\begin{DoxyCompactList}\small\item\em A generic sink structure. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef bool($\ast$ \mbox{\hyperlink{convert_2sink_8h_a8dc5f07d8875aca7e44924d612ef8a3d}{convert\+\_\+sink\+\_\+update\+\_\+callback}}) (bool $\ast$error, \mbox{\hyperlink{structconvert__sink}{convert\+\_\+sink}} $\ast$target)
+\item 
+\mbox{\Hypertarget{convert_2sink_8h_ad1c2e6f32b0b8d780b209fb9debfd1db}\label{convert_2sink_8h_ad1c2e6f32b0b8d780b209fb9debfd1db}} 
+typedef void($\ast$ \mbox{\hyperlink{convert_2sink_8h_ad1c2e6f32b0b8d780b209fb9debfd1db}{convert\+\_\+sink\+\_\+clear\+\_\+callback}}) (\mbox{\hyperlink{structconvert__sink}{convert\+\_\+sink}} $\ast$target)
+\begin{DoxyCompactList}\small\item\em This callback is run in order to free any allocations to the given sink before it is freed. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+static bool \mbox{\hyperlink{convert_2sink_8h_af958642c386b9ea0803c72a12dd8e064}{convert\+\_\+write}} (bool $\ast$error, \mbox{\hyperlink{structconvert__sink}{convert\+\_\+sink}} $\ast$sink)
+\begin{DoxyCompactList}\small\item\em Writes bytes from the sink\textquotesingle{}s contents once. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{convert_2sink_8h_a61ae6de0b6962e31ea42cbddf8977449}{convert\+\_\+drain}} (bool $\ast$error, \mbox{\hyperlink{structconvert__sink}{convert\+\_\+sink}} $\ast$sink)
+\begin{DoxyCompactList}\small\item\em Writes all of the contents of the given sink. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{convert_2sink_8h_a790420e5a0e94ca4b7aef7a282171a08}\label{convert_2sink_8h_a790420e5a0e94ca4b7aef7a282171a08}} 
+static void \mbox{\hyperlink{convert_2sink_8h_a790420e5a0e94ca4b7aef7a282171a08}{convert\+\_\+sink\+\_\+clear}} (\mbox{\hyperlink{structconvert__sink}{convert\+\_\+sink}} $\ast$sink)
+\begin{DoxyCompactList}\small\item\em Clears a sink in preparation to free it. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{convert_2sink_8h_afdf6b6a884f5ed2c20fab82e095e4a66}\label{convert_2sink_8h_afdf6b6a884f5ed2c20fab82e095e4a66}} 
+void \mbox{\hyperlink{convert_2sink_8h_afdf6b6a884f5ed2c20fab82e095e4a66}{convert\+\_\+sink\+\_\+free}} (\mbox{\hyperlink{structconvert__sink}{convert\+\_\+sink}} $\ast$sink)
+\begin{DoxyCompactList}\small\item\em Clears and then frees a sink. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Provides an interface for writing bytes from a range into an abstracted stream. 
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{convert_2sink_8h_a8dc5f07d8875aca7e44924d612ef8a3d}\label{convert_2sink_8h_a8dc5f07d8875aca7e44924d612ef8a3d}} 
+\index{sink.h@{sink.h}!convert\_sink\_update\_callback@{convert\_sink\_update\_callback}}
+\index{convert\_sink\_update\_callback@{convert\_sink\_update\_callback}!sink.h@{sink.h}}
+\doxysubsubsection{\texorpdfstring{convert\_sink\_update\_callback}{convert\_sink\_update\_callback}}
+{\footnotesize\ttfamily typedef bool($\ast$ convert\+\_\+sink\+\_\+update\+\_\+callback) (bool $\ast$error, \mbox{\hyperlink{structconvert__sink}{convert\+\_\+sink}} $\ast$target)}
+
+This callback is called when bytes should be drained from the target\textquotesingle{}s contents. 
+\begin{DoxyParams}{Parameters}
+{\em error} & Should be set to true if an error occurs \\
+\hline
+{\em target} & The target sink \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns true if more bytes may be written after this call. Returns false if an error occured or the output stream closed. 
+\end{DoxyReturn}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{convert_2sink_8h_a61ae6de0b6962e31ea42cbddf8977449}\label{convert_2sink_8h_a61ae6de0b6962e31ea42cbddf8977449}} 
+\index{sink.h@{sink.h}!convert\_drain@{convert\_drain}}
+\index{convert\_drain@{convert\_drain}!sink.h@{sink.h}}
+\doxysubsubsection{\texorpdfstring{convert\_drain()}{convert\_drain()}}
+{\footnotesize\ttfamily bool convert\+\_\+drain (\begin{DoxyParamCaption}\item[{bool $\ast$}]{error,  }\item[{\mbox{\hyperlink{structconvert__sink}{convert\+\_\+sink}} $\ast$}]{sink }\end{DoxyParamCaption})}
+
+
+
+Writes all of the contents of the given sink. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em error} & Will be set to true if an error occurs \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+false if an error occurred or the stream closed before all contents were written 
+\end{DoxyReturn}
+\mbox{\Hypertarget{convert_2sink_8h_af958642c386b9ea0803c72a12dd8e064}\label{convert_2sink_8h_af958642c386b9ea0803c72a12dd8e064}} 
+\index{sink.h@{sink.h}!convert\_write@{convert\_write}}
+\index{convert\_write@{convert\_write}!sink.h@{sink.h}}
+\doxysubsubsection{\texorpdfstring{convert\_write()}{convert\_write()}}
+{\footnotesize\ttfamily static bool convert\+\_\+write (\begin{DoxyParamCaption}\item[{bool $\ast$}]{error,  }\item[{\mbox{\hyperlink{structconvert__sink}{convert\+\_\+sink}} $\ast$}]{sink }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Writes bytes from the sink\textquotesingle{}s contents once. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em error} & Will be set to true if an error occurs \\
+\hline
+{\em interface} & The sink to write from \\
+\hline
+\end{DoxyParams}

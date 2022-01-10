@@ -1,0 +1,46 @@
+\hypertarget{dzip_2source_8h}{}\doxysection{src/dzip/source.h File Reference}
+\label{dzip_2source_8h}\index{src/dzip/source.h@{src/dzip/source.h}}
+{\ttfamily \#include $<$stddef.\+h$>$}\newline
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}../range/def.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../window/def.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../convert/source.\+h\char`\"{}}\newline
+\doxysubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structdzip__inflate__source}{dzip\+\_\+inflate\+\_\+source}}
+\begin{DoxyCompactList}\small\item\em The dzip source structure. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{dzip_2source_8h_ac80cfd625439acbf5208a908229dd684}\label{dzip_2source_8h_ac80cfd625439acbf5208a908229dd684}} 
+typedef struct \mbox{\hyperlink{structdzip__inflate__source}{dzip\+\_\+inflate\+\_\+source}} \mbox{\hyperlink{dzip_2source_8h_ac80cfd625439acbf5208a908229dd684}{dzip\+\_\+inflate\+\_\+source}}
+\begin{DoxyCompactList}\small\item\em The dzip source structure. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structdzip__inflate__source}{dzip\+\_\+inflate\+\_\+source}} \mbox{\hyperlink{dzip_2source_8h_a09d951fa3abce7ea31fb90f5dbc2e2d3}{dzip\+\_\+inflate\+\_\+source\+\_\+init}} (\mbox{\hyperlink{structconvert__source}{convert\+\_\+source}} $\ast$next, \mbox{\hyperlink{unionwindow__unsigned__char}{window\+\_\+unsigned\+\_\+char}} $\ast$contents)
+\begin{DoxyCompactList}\small\item\em Initializes a \mbox{\hyperlink{structdzip__inflate__source}{dzip\+\_\+inflate\+\_\+source}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Provides a readable inflate source that is compatible with the source described in \mbox{\hyperlink{convert_2source_8h}{convert/source.\+h}} 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{dzip_2source_8h_a09d951fa3abce7ea31fb90f5dbc2e2d3}\label{dzip_2source_8h_a09d951fa3abce7ea31fb90f5dbc2e2d3}} 
+\index{source.h@{source.h}!dzip\_inflate\_source\_init@{dzip\_inflate\_source\_init}}
+\index{dzip\_inflate\_source\_init@{dzip\_inflate\_source\_init}!source.h@{source.h}}
+\doxysubsubsection{\texorpdfstring{dzip\_inflate\_source\_init()}{dzip\_inflate\_source\_init()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structdzip__inflate__source}{dzip\+\_\+inflate\+\_\+source}} dzip\+\_\+inflate\+\_\+source\+\_\+init (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structconvert__source}{convert\+\_\+source}} $\ast$}]{next,  }\item[{\mbox{\hyperlink{unionwindow__unsigned__char}{window\+\_\+unsigned\+\_\+char}} $\ast$}]{contents }\end{DoxyParamCaption})}
+
+
+
+Initializes a \mbox{\hyperlink{structdzip__inflate__source}{dzip\+\_\+inflate\+\_\+source}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em next} & A source providing compressed bytes that the new source will inflate \\
+\hline
+{\em contents} & A window that the new source will fill with inflated bytes \\
+\hline
+\end{DoxyParams}

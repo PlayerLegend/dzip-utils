@@ -1,0 +1,52 @@
+\hypertarget{range_2path_8h}{}\doxysection{src/range/path.h File Reference}
+\label{range_2path_8h}\index{src/range/path.h@{src/range/path.h}}
+{\ttfamily \#include $<$stddef.\+h$>$}\newline
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}def.\+h\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{range_2path_8h_a5677e2f398af259e68e6d3fd9a01f0af}{range\+\_\+dirname}} (\mbox{\hyperlink{unionrange__const__char}{range\+\_\+const\+\_\+char}} $\ast$path, char sep)
+\begin{DoxyCompactList}\small\item\em Given a range that contains a path, this function will modify that range so that it contains only the dirname portion of that path. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{range_2path_8h_a045aac446f901496fabffe8d79de6bbb}{range\+\_\+basename}} (\mbox{\hyperlink{unionrange__const__char}{range\+\_\+const\+\_\+char}} $\ast$path, char sep)
+\begin{DoxyCompactList}\small\item\em Given a range that contains a path, this function will modify that range so that it contains only the basename portion of that path. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Provides functionality for working with paths using the \mbox{\hyperlink{unionrange__char}{range\+\_\+char}} type described in \mbox{\hyperlink{range_2def_8h}{range/def.\+h}} 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{range_2path_8h_a045aac446f901496fabffe8d79de6bbb}\label{range_2path_8h_a045aac446f901496fabffe8d79de6bbb}} 
+\index{path.h@{path.h}!range\_basename@{range\_basename}}
+\index{range\_basename@{range\_basename}!path.h@{path.h}}
+\doxysubsubsection{\texorpdfstring{range\_basename()}{range\_basename()}}
+{\footnotesize\ttfamily void range\+\_\+basename (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{unionrange__const__char}{range\+\_\+const\+\_\+char}} $\ast$}]{path,  }\item[{char}]{sep }\end{DoxyParamCaption})}
+
+
+
+Given a range that contains a path, this function will modify that range so that it contains only the basename portion of that path. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em path} & The path to modify \\
+\hline
+{\em sep} & The path separator character \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{range_2path_8h_a5677e2f398af259e68e6d3fd9a01f0af}\label{range_2path_8h_a5677e2f398af259e68e6d3fd9a01f0af}} 
+\index{path.h@{path.h}!range\_dirname@{range\_dirname}}
+\index{range\_dirname@{range\_dirname}!path.h@{path.h}}
+\doxysubsubsection{\texorpdfstring{range\_dirname()}{range\_dirname()}}
+{\footnotesize\ttfamily void range\+\_\+dirname (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{unionrange__const__char}{range\+\_\+const\+\_\+char}} $\ast$}]{path,  }\item[{char}]{sep }\end{DoxyParamCaption})}
+
+
+
+Given a range that contains a path, this function will modify that range so that it contains only the dirname portion of that path. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em path} & The path to modify \\
+\hline
+{\em sep} & The path separator character \\
+\hline
+\end{DoxyParams}

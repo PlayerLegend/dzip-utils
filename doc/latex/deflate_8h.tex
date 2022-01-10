@@ -1,0 +1,32 @@
+\hypertarget{deflate_8h}{}\doxysection{src/dzip/deflate.h File Reference}
+\label{deflate_8h}\index{src/dzip/deflate.h@{src/dzip/deflate.h}}
+{\ttfamily \#include $<$stddef.\+h$>$}\newline
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}../range/def.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../window/def.\+h\char`\"{}}\newline
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{deflate_8h_ad63a4aa8d493a82e7e71dfa6ec70a891}\label{deflate_8h_ad63a4aa8d493a82e7e71dfa6ec70a891}} 
+typedef uint32\+\_\+t \mbox{\hyperlink{deflate_8h_ad63a4aa8d493a82e7e71dfa6ec70a891}{dzip\+\_\+deflate\+\_\+offset}}
+\begin{DoxyCompactList}\small\item\em An integer large enough to describe an offset within a dzip chunk. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{deflate_8h_a5dbe34fb06de08679cba377910018648}\label{deflate_8h_a5dbe34fb06de08679cba377910018648}} 
+typedef uint64\+\_\+t \mbox{\hyperlink{deflate_8h_a5dbe34fb06de08679cba377910018648}{dzip\+\_\+deflate\+\_\+index}}
+\begin{DoxyCompactList}\small\item\em An integer used to index a dzip table. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{deflate_8h_ae10fc48d07abf7488a152852609c041f}\label{deflate_8h_ae10fc48d07abf7488a152852609c041f}} 
+typedef \mbox{\hyperlink{deflate_8h_ad63a4aa8d493a82e7e71dfa6ec70a891}{dzip\+\_\+deflate\+\_\+offset}} \mbox{\hyperlink{deflate_8h_ae10fc48d07abf7488a152852609c041f}{dzip\+\_\+deflate\+\_\+state}}\mbox{[}16963\mbox{]}
+\begin{DoxyCompactList}\small\item\em A dzip table used to find matches within a chunk. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{deflate_8h_a3549cb0b9faa45e2e6e6b204900bdff9}\label{deflate_8h_a3549cb0b9faa45e2e6e6b204900bdff9}} 
+void \mbox{\hyperlink{deflate_8h_a3549cb0b9faa45e2e6e6b204900bdff9}{dzip\+\_\+deflate\+\_\+mem}} (\mbox{\hyperlink{unionwindow__unsigned__char}{window\+\_\+unsigned\+\_\+char}} $\ast$output, \mbox{\hyperlink{deflate_8h_ae10fc48d07abf7488a152852609c041f}{dzip\+\_\+deflate\+\_\+state}} $\ast$state, \mbox{\hyperlink{unionrange__const__unsigned__char}{range\+\_\+const\+\_\+unsigned\+\_\+char}} $\ast$input)
+\begin{DoxyCompactList}\small\item\em Consumes all bytes from the given input and compresses them into one or more chunks appended to the output. state need not be initialized. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{deflate_8h_a43bbbe4bccee555939f22f3843e50347}\label{deflate_8h_a43bbbe4bccee555939f22f3843e50347}} 
+void \mbox{\hyperlink{deflate_8h_a43bbbe4bccee555939f22f3843e50347}{dzip\+\_\+deflate\+\_\+chunk}} (\mbox{\hyperlink{unionwindow__unsigned__char}{window\+\_\+unsigned\+\_\+char}} $\ast$output, \mbox{\hyperlink{deflate_8h_ae10fc48d07abf7488a152852609c041f}{dzip\+\_\+deflate\+\_\+state}} $\ast$state, \mbox{\hyperlink{unionrange__const__unsigned__char}{range\+\_\+const\+\_\+unsigned\+\_\+char}} $\ast$input)
+\begin{DoxyCompactList}\small\item\em Consumes all bytes from the given input and compresses them into a single chunk appended to the output. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Provides deflate functions for dzip streams 

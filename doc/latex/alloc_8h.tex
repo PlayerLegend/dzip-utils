@@ -1,0 +1,91 @@
+\hypertarget{alloc_8h}{}\doxysection{src/window/alloc.h File Reference}
+\label{alloc_8h}\index{src/window/alloc.h@{src/window/alloc.h}}
+{\ttfamily \#include $<$stddef.\+h$>$}\newline
+{\ttfamily \#include $<$assert.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}../range/def.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../window/def.\+h\char`\"{}}\newline
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{alloc_8h_a53072f471ce9bd00788f069aa42c2044}{window\+\_\+alloc}}(window,  count)~    \+\_\+window\+\_\+alloc ( (\mbox{\hyperlink{unionwindow__void}{window\+\_\+void}}$\ast$) \&(window), sizeof( $\ast$(window).alloc.\+begin ), count )
+\item 
+\mbox{\Hypertarget{alloc_8h_ad1483cc8769d7fdbd754af2b7feacbec}\label{alloc_8h_ad1483cc8769d7fdbd754af2b7feacbec}} 
+\#define \mbox{\hyperlink{alloc_8h_ad1483cc8769d7fdbd754af2b7feacbec}{window\+\_\+clear}}(window)~    \+\_\+window\+\_\+clear ( (\mbox{\hyperlink{unionwindow__void}{window\+\_\+void}}$\ast$) \&(window) )
+\begin{DoxyCompactList}\small\item\em Frees the memory allocated to the given window and sets all pointers in the window to NULL. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{alloc_8h_a2913f588526671d87ed1e1eb9fd88cb5}\label{alloc_8h_a2913f588526671d87ed1e1eb9fd88cb5}} 
+\#define \mbox{\hyperlink{alloc_8h_a2913f588526671d87ed1e1eb9fd88cb5}{window\+\_\+push}}(window)~( (window).region.\+end $<$ (window).alloc.\+end ? (window).region.\+end++ \+: (\mbox{\hyperlink{alloc_8h_a53072f471ce9bd00788f069aa42c2044}{window\+\_\+alloc}} (window, (window).alloc.\+end -\/ (window).alloc.\+begin + 1), (window).region.\+end++) )
+\begin{DoxyCompactList}\small\item\em Adds an item to the end of the window\textquotesingle{}s region and evaluates to a pointer to the new item. The new item will have the highest index of all the window\textquotesingle{}s items. To initialize the resulting item, one may either store the address given by this macro and set it up later, or dereference the macro invocation. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{alloc_8h_a5f4b06341018e09e76b1d15dd0329182}{window\+\_\+append\+\_\+bytes}} (\mbox{\hyperlink{unionwindow__unsigned__char}{window\+\_\+unsigned\+\_\+char}} $\ast$window, const unsigned char $\ast$begin, size\+\_\+t size)
+\begin{DoxyCompactList}\small\item\em Adds the given bytes to the end of an unsigned char window\textquotesingle{}s region. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{alloc_8h_a9af5dca501c5822b10f7de8ced487fa7}\label{alloc_8h_a9af5dca501c5822b10f7de8ced487fa7}} 
+static void \mbox{\hyperlink{alloc_8h_a9af5dca501c5822b10f7de8ced487fa7}{window\+\_\+append\+\_\+bytes\+\_\+range}} (\mbox{\hyperlink{unionwindow__unsigned__char}{window\+\_\+unsigned\+\_\+char}} $\ast$window, const \mbox{\hyperlink{unionrange__const__unsigned__char}{range\+\_\+const\+\_\+unsigned\+\_\+char}} $\ast$bytes)
+\begin{DoxyCompactList}\small\item\em Similar to window\+\_\+append\+\_\+bytes, but this function uses a range to indicate the bytes to be added. \end{DoxyCompactList}\item 
+static unsigned char $\ast$ \mbox{\hyperlink{alloc_8h_a44fbaad12750fe9647ebfd7140791fb4}{window\+\_\+grow\+\_\+bytes}} (\mbox{\hyperlink{unionwindow__unsigned__char}{window\+\_\+unsigned\+\_\+char}} $\ast$window, size\+\_\+t size)
+\begin{DoxyCompactList}\small\item\em Resizes the window\textquotesingle{}s region to hold an additional number of bytes at the end, and returns a pointer to the beginning of the new bytes. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{alloc_8h_a0c6559f509297edcc5d90d9c7e495798}\label{alloc_8h_a0c6559f509297edcc5d90d9c7e495798}} 
+static void \mbox{\hyperlink{alloc_8h_a0c6559f509297edcc5d90d9c7e495798}{window\+\_\+resize\+\_\+bytes}} (\mbox{\hyperlink{unionwindow__unsigned__char}{window\+\_\+unsigned\+\_\+char}} $\ast$window, size\+\_\+t size)
+\begin{DoxyCompactList}\small\item\em Resizes the window\textquotesingle{}s region to exactly the given size. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Provides basic memory allocation functions for windows described in \mbox{\hyperlink{window_2def_8h}{window/def.\+h}} 
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{alloc_8h_a53072f471ce9bd00788f069aa42c2044}\label{alloc_8h_a53072f471ce9bd00788f069aa42c2044}} 
+\index{alloc.h@{alloc.h}!window\_alloc@{window\_alloc}}
+\index{window\_alloc@{window\_alloc}!alloc.h@{alloc.h}}
+\doxysubsubsection{\texorpdfstring{window\_alloc}{window\_alloc}}
+{\footnotesize\ttfamily \#define window\+\_\+alloc(\begin{DoxyParamCaption}\item[{}]{window,  }\item[{}]{count }\end{DoxyParamCaption})~    \+\_\+window\+\_\+alloc ( (\mbox{\hyperlink{unionwindow__void}{window\+\_\+void}}$\ast$) \&(window), sizeof( $\ast$(window).alloc.\+begin ), count )}
+
+Allocates at least the given number of indices in the window 
+\begin{DoxyParams}{Parameters}
+{\em window} & The target window \\
+\hline
+{\em count} & The number of indices to allocate \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{alloc_8h_a5f4b06341018e09e76b1d15dd0329182}\label{alloc_8h_a5f4b06341018e09e76b1d15dd0329182}} 
+\index{alloc.h@{alloc.h}!window\_append\_bytes@{window\_append\_bytes}}
+\index{window\_append\_bytes@{window\_append\_bytes}!alloc.h@{alloc.h}}
+\doxysubsubsection{\texorpdfstring{window\_append\_bytes()}{window\_append\_bytes()}}
+{\footnotesize\ttfamily void window\+\_\+append\+\_\+bytes (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{unionwindow__unsigned__char}{window\+\_\+unsigned\+\_\+char}} $\ast$}]{window,  }\item[{const unsigned char $\ast$}]{begin,  }\item[{size\+\_\+t}]{size }\end{DoxyParamCaption})}
+
+
+
+Adds the given bytes to the end of an unsigned char window\textquotesingle{}s region. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em window} & The target window \\
+\hline
+{\em begin} & A pointer to the bytes to be added \\
+\hline
+{\em size} & The number of bytes to be added \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{alloc_8h_a44fbaad12750fe9647ebfd7140791fb4}\label{alloc_8h_a44fbaad12750fe9647ebfd7140791fb4}} 
+\index{alloc.h@{alloc.h}!window\_grow\_bytes@{window\_grow\_bytes}}
+\index{window\_grow\_bytes@{window\_grow\_bytes}!alloc.h@{alloc.h}}
+\doxysubsubsection{\texorpdfstring{window\_grow\_bytes()}{window\_grow\_bytes()}}
+{\footnotesize\ttfamily static unsigned char$\ast$ window\+\_\+grow\+\_\+bytes (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{unionwindow__unsigned__char}{window\+\_\+unsigned\+\_\+char}} $\ast$}]{window,  }\item[{size\+\_\+t}]{size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Resizes the window\textquotesingle{}s region to hold an additional number of bytes at the end, and returns a pointer to the beginning of the new bytes. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em window} & The target window \\
+\hline
+{\em size} & The number of bytes to added \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A pointer to the new bytes 
+\end{DoxyReturn}

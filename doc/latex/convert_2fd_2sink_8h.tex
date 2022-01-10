@@ -1,0 +1,30 @@
+\hypertarget{convert_2fd_2sink_8h}{}\doxysection{src/convert/fd/sink.h File Reference}
+\label{convert_2fd_2sink_8h}\index{src/convert/fd/sink.h@{src/convert/fd/sink.h}}
+{\ttfamily \#include $<$stddef.\+h$>$}\newline
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+{\ttfamily \#include $<$unistd.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}../../range/def.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../../window/def.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../source.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../sink.\+h\char`\"{}}\newline
+\doxysubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structfd__sink}{fd\+\_\+sink}}
+\begin{DoxyCompactList}\small\item\em A structure used for writing to a file descriptor using the interface described in \mbox{\hyperlink{convert_2sink_8h}{convert/sink.\+h}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{convert_2fd_2sink_8h_a43ba12c298cd0570c7765641c9fbf5fa}\label{convert_2fd_2sink_8h_a43ba12c298cd0570c7765641c9fbf5fa}} 
+typedef struct \mbox{\hyperlink{structfd__sink}{fd\+\_\+sink}} \mbox{\hyperlink{convert_2fd_2sink_8h_a43ba12c298cd0570c7765641c9fbf5fa}{fd\+\_\+sink}}
+\begin{DoxyCompactList}\small\item\em A structure used for writing to a file descriptor using the interface described in \mbox{\hyperlink{convert_2sink_8h}{convert/sink.\+h}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{convert_2fd_2sink_8h_a275dea34d2bbfd42ca83767c79d0ce74}\label{convert_2fd_2sink_8h_a275dea34d2bbfd42ca83767c79d0ce74}} 
+\mbox{\hyperlink{structfd__sink}{fd\+\_\+sink}} \mbox{\hyperlink{convert_2fd_2sink_8h_a275dea34d2bbfd42ca83767c79d0ce74}{fd\+\_\+sink\+\_\+init}} (int fd, \mbox{\hyperlink{unionrange__const__unsigned__char}{range\+\_\+const\+\_\+unsigned\+\_\+char}} $\ast$contents)
+\begin{DoxyCompactList}\small\item\em Initializes an \mbox{\hyperlink{structfd__sink}{fd\+\_\+sink}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Provides a sink for writing to file descriptors 

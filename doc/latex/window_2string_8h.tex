@@ -1,0 +1,47 @@
+\hypertarget{window_2string_8h}{}\doxysection{src/window/string.h File Reference}
+\label{window_2string_8h}\index{src/window/string.h@{src/window/string.h}}
+{\ttfamily \#include $<$stddef.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}../range/def.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}def.\+h\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{window_2string_8h_a33c11156d13c5139449979d4749d70b9}{window\+\_\+strcat\+\_\+string}} (\mbox{\hyperlink{unionwindow__char}{window\+\_\+char}} $\ast$dest, const char $\ast$str)
+\item 
+void \mbox{\hyperlink{window_2string_8h_a24efb49e969d15a1efa43a088f01737f}{window\+\_\+strcpy\+\_\+string}} (\mbox{\hyperlink{unionwindow__char}{window\+\_\+char}} $\ast$dest, const char $\ast$str)
+\item 
+void \mbox{\hyperlink{window_2string_8h_a3a4887c51e3038433404b50ac689af4c}{window\+\_\+strcat\+\_\+range}} (\mbox{\hyperlink{unionwindow__char}{window\+\_\+char}} $\ast$dest, const \mbox{\hyperlink{unionrange__const__char}{range\+\_\+const\+\_\+char}} $\ast$src)
+\item 
+void \mbox{\hyperlink{window_2string_8h_a186275fc418ed605c724ac73adda2bd0}{window\+\_\+strcpy\+\_\+range}} (\mbox{\hyperlink{unionwindow__char}{window\+\_\+char}} $\ast$dest, const \mbox{\hyperlink{unionrange__const__char}{range\+\_\+const\+\_\+char}} $\ast$src)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This file provides functions for working with strings contained in windows 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{window_2string_8h_a3a4887c51e3038433404b50ac689af4c}\label{window_2string_8h_a3a4887c51e3038433404b50ac689af4c}} 
+\index{string.h@{string.h}!window\_strcat\_range@{window\_strcat\_range}}
+\index{window\_strcat\_range@{window\_strcat\_range}!string.h@{string.h}}
+\doxysubsubsection{\texorpdfstring{window\_strcat\_range()}{window\_strcat\_range()}}
+{\footnotesize\ttfamily void window\+\_\+strcat\+\_\+range (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{unionwindow__char}{window\+\_\+char}} $\ast$}]{dest,  }\item[{const \mbox{\hyperlink{unionrange__const__char}{range\+\_\+const\+\_\+char}} $\ast$}]{src }\end{DoxyParamCaption})}
+
+Similar to window\+\_\+strcat\+\_\+string, but the string argument is a range string rather than a null terminated string \mbox{\Hypertarget{window_2string_8h_a33c11156d13c5139449979d4749d70b9}\label{window_2string_8h_a33c11156d13c5139449979d4749d70b9}} 
+\index{string.h@{string.h}!window\_strcat\_string@{window\_strcat\_string}}
+\index{window\_strcat\_string@{window\_strcat\_string}!string.h@{string.h}}
+\doxysubsubsection{\texorpdfstring{window\_strcat\_string()}{window\_strcat\_string()}}
+{\footnotesize\ttfamily void window\+\_\+strcat\+\_\+string (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{unionwindow__char}{window\+\_\+char}} $\ast$}]{dest,  }\item[{const char $\ast$}]{str }\end{DoxyParamCaption})}
+
+Concatenates a null terminated string to a window \mbox{\Hypertarget{window_2string_8h_a186275fc418ed605c724ac73adda2bd0}\label{window_2string_8h_a186275fc418ed605c724ac73adda2bd0}} 
+\index{string.h@{string.h}!window\_strcpy\_range@{window\_strcpy\_range}}
+\index{window\_strcpy\_range@{window\_strcpy\_range}!string.h@{string.h}}
+\doxysubsubsection{\texorpdfstring{window\_strcpy\_range()}{window\_strcpy\_range()}}
+{\footnotesize\ttfamily void window\+\_\+strcpy\+\_\+range (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{unionwindow__char}{window\+\_\+char}} $\ast$}]{dest,  }\item[{const \mbox{\hyperlink{unionrange__const__char}{range\+\_\+const\+\_\+char}} $\ast$}]{src }\end{DoxyParamCaption})}
+
+Similar to window\+\_\+strcpy\+\_\+string, but the string argument is a range string rather than a null terminated string \mbox{\Hypertarget{window_2string_8h_a24efb49e969d15a1efa43a088f01737f}\label{window_2string_8h_a24efb49e969d15a1efa43a088f01737f}} 
+\index{string.h@{string.h}!window\_strcpy\_string@{window\_strcpy\_string}}
+\index{window\_strcpy\_string@{window\_strcpy\_string}!string.h@{string.h}}
+\doxysubsubsection{\texorpdfstring{window\_strcpy\_string()}{window\_strcpy\_string()}}
+{\footnotesize\ttfamily void window\+\_\+strcpy\+\_\+string (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{unionwindow__char}{window\+\_\+char}} $\ast$}]{dest,  }\item[{const char $\ast$}]{str }\end{DoxyParamCaption})}
+
+Copies a null terminated string into a window, overwriting any existing contents in the window 

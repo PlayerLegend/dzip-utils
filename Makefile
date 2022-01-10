@@ -108,20 +108,23 @@ src/window/printf_append.o: src/window/printf.h src/window/alloc.h
 src/window/printf_append.o: src/window/vprintf.h
 src/window/printf.o: src/range/def.h src/range/def.h
 src/window/vprintf.o: src/range/def.h src/range/def.h
+src/convert/join.o: src/range/def.h src/window/def.h src/window/alloc.h
+src/convert/join.o: src/convert/sink.h src/convert/source.h
+src/convert/join.o: src/convert/join.h
 src/convert/fd/sink.o: src/range/def.h src/window/def.h src/window/alloc.h
 src/convert/fd/sink.o: src/convert/source.h src/convert/sink.h
-src/convert/fd/sink.o: src/convert/fd/sink.h src/log/log.h
+src/convert/fd/sink.o: src/convert/sink.h src/log/log.h
 src/convert/fd/source.o: src/range/def.h src/window/def.h
 src/convert/fd/source.o: src/convert/source.h src/convert/sink.h
 src/convert/fd/source.o: src/range/def.h src/window/def.h src/window/alloc.h
 src/convert/fd/source.o: src/convert/source.h src/convert/sink.h
-src/convert/fd/source.o: src/convert/fd/source.h src/convert/fd/sink.h
+src/convert/fd/source.o: src/convert/source.h src/convert/sink.h
 src/convert/fd/source.o: src/log/log.h
 src/convert/fd/sink.o: src/range/def.h src/window/def.h src/convert/source.h
 src/convert/fd/sink.o: src/convert/sink.h
 src/convert/getline.o: src/range/string.h src/range/def.h src/range/string.h
 src/convert/getline.o: src/window/def.h src/window/alloc.h
-src/convert/getline.o: src/convert/fd/source.h src/convert/getline.h
+src/convert/getline.o: src/convert/source.h src/convert/getline.h
 src/convert/getline.o: src/log/log.h
 src/convert/test/cat.test.o: src/range/def.h src/window/def.h
 src/convert/test/cat.test.o: src/window/alloc.h src/convert/source.h
@@ -137,44 +140,35 @@ src/convert/test/cat-load-all.test.o: src/window/alloc.h src/convert/source.h
 src/convert/test/cat-load-all.test.o: src/convert/fd/source.h
 src/convert/test/cat-load-all.test.o: src/convert/sink.h
 src/convert/test/cat-load-all.test.o: src/convert/fd/sink.h src/log/log.h
-src/convert/fd-bifurcated.o: src/window/def.h src/window/alloc.h
-src/convert/fd-bifurcated.o: src/range/def.h src/convert/fd-bifurcated.h
-src/convert/fd-bifurcated.o: src/log/log.h
 src/convert/source.o: src/range/def.h src/window/def.h src/window/alloc.h
-src/convert/source.o: src/convert/fd/source.h src/log/log.h
+src/convert/source.o: src/convert/source.h src/log/log.h
 src/convert/sink.o: src/range/def.h src/window/def.h
-src/convert/duplex.o: src/range/def.h src/window/def.h src/convert/fd/sink.h
-src/convert/duplex.o: src/convert/fd/source.h
-src/convert/getline.o: src/range/def.h src/window/def.h
-src/convert/getline.o: src/convert/fd/source.h
-src/convert/duplex.o: src/range/def.h src/window/def.h src/window/alloc.h
-src/convert/duplex.o: src/convert/fd/sink.h src/convert/fd/source.h
-src/convert/duplex.o: src/convert/duplex.h
+src/convert/getline.o: src/range/def.h src/window/def.h src/convert/source.h
+src/convert/join.o: src/range/def.h src/window/def.h src/convert/sink.h
+src/convert/join.o: src/convert/source.h
 src/convert/source.o: src/range/def.h src/window/def.h
 src/convert/sink.o: src/range/def.h src/window/def.h src/window/alloc.h
-src/convert/sink.o: src/convert/fd/sink.h src/log/log.h
-src/convert/fd-bifurcated.o: src/window/def.h src/range/def.h
+src/convert/sink.o: src/convert/sink.h src/log/log.h
 src/dzip/dzip.util.o: src/range/def.h src/window/def.h src/window/alloc.h
 src/dzip/dzip.util.o: src/convert/source.h src/convert/fd/source.h
 src/dzip/dzip.util.o: src/convert/sink.h src/convert/fd/sink.h
-src/dzip/dzip.util.o: src/convert/duplex.h src/dzip/deflate.h
-src/dzip/dzip.util.o: src/dzip/inflate.h src/convert/fd/source.h
-src/dzip/dzip.util.o: src/convert/fd/sink.h src/log/log.h
+src/dzip/dzip.util.o: src/convert/join.h src/dzip/deflate.h
+src/dzip/dzip.util.o: src/dzip/inflate.h src/convert/source.h
+src/dzip/dzip.util.o: src/convert/sink.h src/log/log.h
 src/dzip/source.o: src/range/def.h src/window/def.h src/convert/source.h
-src/dzip/source.o: src/convert/fd/source.h src/dzip/inflate.h src/log/log.h
+src/dzip/source.o: src/convert/source.h src/dzip/inflate.h src/log/log.h
 src/dzip/inflate.o: src/range/def.h src/window/def.h src/convert/source.h
 src/dzip/deflate.o: src/range/def.h src/window/def.h
 src/dzip/test/dzip-benchmark.test.o: src/range/string.h src/range/def.h
 src/dzip/test/dzip-benchmark.test.o: src/window/def.h src/window/alloc.h
 src/dzip/test/dzip-benchmark.test.o: src/convert/source.h src/convert/sink.h
 src/dzip/test/dzip-benchmark.test.o: src/convert/fd/source.h
-src/dzip/test/dzip-benchmark.test.o: src/convert/fd/sink.h
-src/dzip/test/dzip-benchmark.test.o: src/convert/duplex.h src/dzip/deflate.h
+src/dzip/test/dzip-benchmark.test.o: src/convert/fd/sink.h src/dzip/deflate.h
 src/dzip/test/dzip-benchmark.test.o: src/log/log.h
 src/dzip/sink.o: src/range/def.h src/window/def.h src/convert/sink.h
 src/dzip/source.o: src/range/def.h src/window/def.h src/convert/source.h
 src/dzip/sink.o: src/range/def.h src/window/def.h src/window/alloc.h
-src/dzip/sink.o: src/convert/sink.h src/convert/fd/sink.h src/dzip/deflate.h
+src/dzip/sink.o: src/convert/sink.h src/convert/sink.h src/dzip/deflate.h
 src/dzip/sink.o: src/log/log.h
 src/dzip/inflate.o: src/range/def.h src/window/def.h src/convert/source.h
 src/dzip/inflate.o: src/window/alloc.h src/dzip/inflate.h src/dzip/common.h
@@ -197,6 +191,6 @@ src/vluint/test/base/test.o: src/window/def.h src/window/printf.h
 src/vluint/test/base/test.o: src/vluint/vluint.h src/log/log.h
 src/vluint/vluint.o: src/range/def.h src/window/def.h
 src/vluint/source.o: src/range/def.h src/window/def.h src/vluint/vluint.h
-src/vluint/source.o: src/convert/source.h src/convert/fd/source.h
+src/vluint/source.o: src/convert/source.h src/convert/source.h
 src/log/test/log.test.o: src/log/log.h
 src/log/log.o: src/log/log.h

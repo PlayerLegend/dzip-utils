@@ -1,0 +1,43 @@
+\hypertarget{vluint_2source_8h}{}\doxysection{src/vluint/source.h File Reference}
+\label{vluint_2source_8h}\index{src/vluint/source.h@{src/vluint/source.h}}
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}../range/def.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../window/def.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}vluint.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../convert/source.\+h\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+unsigned long long \mbox{\hyperlink{vluint_2source_8h_ad4e0232f6ba7f3af9b6f86e13ebb02eb}{vluint\+\_\+read\+\_\+source}} (bool $\ast$error, \mbox{\hyperlink{structconvert__source}{convert\+\_\+source}} $\ast$source, size\+\_\+t limit)
+\begin{DoxyCompactList}\small\item\em Reads a vluint from the given source, consuming bytes as it reads. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Provides a function for reading vluints described in \mbox{\hyperlink{vluint_8h}{vluint/vluint.\+h}} from a \mbox{\hyperlink{structconvert__source}{convert\+\_\+source}} described in \mbox{\hyperlink{convert_2source_8h}{convert/source.\+h}} 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{vluint_2source_8h_ad4e0232f6ba7f3af9b6f86e13ebb02eb}\label{vluint_2source_8h_ad4e0232f6ba7f3af9b6f86e13ebb02eb}} 
+\index{source.h@{source.h}!vluint\_read\_source@{vluint\_read\_source}}
+\index{vluint\_read\_source@{vluint\_read\_source}!source.h@{source.h}}
+\doxysubsubsection{\texorpdfstring{vluint\_read\_source()}{vluint\_read\_source()}}
+{\footnotesize\ttfamily unsigned long long vluint\+\_\+read\+\_\+source (\begin{DoxyParamCaption}\item[{bool $\ast$}]{error,  }\item[{\mbox{\hyperlink{structconvert__source}{convert\+\_\+source}} $\ast$}]{source,  }\item[{size\+\_\+t}]{limit }\end{DoxyParamCaption})}
+
+
+
+Reads a vluint from the given source, consuming bytes as it reads. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em error} & Will be set to true if an error occurs \\
+\hline
+{\em source} & The source to be read \\
+\hline
+{\em limit} & The maximum number of bytes to read while searching for the end of a vluint \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The value of the vluint that was read, or -\/1 if an error occured 
+\end{DoxyReturn}

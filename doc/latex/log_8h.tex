@@ -1,0 +1,61 @@
+\hypertarget{log_8h}{}\doxysection{src/log/log.h File Reference}
+\label{log_8h}\index{src/log/log.h@{src/log/log.h}}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{log_8h_a681796d90db554b225522991770ee7af}\label{log_8h_a681796d90db554b225522991770ee7af}} 
+\#define \mbox{\hyperlink{log_8h_a681796d90db554b225522991770ee7af}{plural}}(singular,  plural,  count)~( (count) $>$ 1 ? (plural) \+: (singular) )
+\begin{DoxyCompactList}\small\item\em Evaluates to plural if the given count is greater than 1, or singular otherwise. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{log_8h_a887f83dbb884a13949e4f2ad710e5ddf}\label{log_8h_a887f83dbb884a13949e4f2ad710e5ddf}} 
+\#define \mbox{\hyperlink{log_8h_a887f83dbb884a13949e4f2ad710e5ddf}{log\+\_\+error}}(fmt, ...)~\+\_\+log (\mbox{\hyperlink{log_8h_ac91d55174d383848b976a34de843748ea230506cce5c68c3bac5a821c42ed3473}{LOG\+\_\+\+ERROR}}, \char`\"{}ERROR\+: \char`\"{} fmt \char`\"{}\textbackslash{}n\char`\"{}, \#\#\+\_\+\+\_\+\+VA\+\_\+\+ARGS\+\_\+\+\_\+)
+\begin{DoxyCompactList}\small\item\em Printf-\/like function that prints an error to stderr. A newline is appended to the resulting message. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{log_8h_a787eca0168664062cfc3f05803bea0bf}\label{log_8h_a787eca0168664062cfc3f05803bea0bf}} 
+\#define \mbox{\hyperlink{log_8h_a787eca0168664062cfc3f05803bea0bf}{log\+\_\+stderr}}(fmt, ...)~\+\_\+log (\mbox{\hyperlink{log_8h_ac91d55174d383848b976a34de843748ea230506cce5c68c3bac5a821c42ed3473}{LOG\+\_\+\+ERROR}}, fmt \char`\"{}\textbackslash{}n\char`\"{}, \#\#\+\_\+\+\_\+\+VA\+\_\+\+ARGS\+\_\+\+\_\+)
+\begin{DoxyCompactList}\small\item\em Printf-\/like function that prints a message to stderr without prepending ERROR\+: like log\+\_\+error does. A newline is appended to the resulting message. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{log_8h_ae38fca37d7536efeeee8c08610319ef5}\label{log_8h_ae38fca37d7536efeeee8c08610319ef5}} 
+\#define \mbox{\hyperlink{log_8h_ae38fca37d7536efeeee8c08610319ef5}{log\+\_\+normal}}(fmt, ...)~\+\_\+log (\mbox{\hyperlink{log_8h_ac91d55174d383848b976a34de843748eabb2c17c44c343a8367060db4175f39ea}{LOG\+\_\+\+NORMAL}}, fmt \char`\"{}\textbackslash{}n\char`\"{}, \#\#\+\_\+\+\_\+\+VA\+\_\+\+ARGS\+\_\+\+\_\+)
+\begin{DoxyCompactList}\small\item\em Printf-\/like function that prints a message to stdout. A newline is appended to the resulting message. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{log_8h_a0e37223ab9f5df7af8cb2a59b7c4dc18}\label{log_8h_a0e37223ab9f5df7af8cb2a59b7c4dc18}} 
+\#define \mbox{\hyperlink{log_8h_a0e37223ab9f5df7af8cb2a59b7c4dc18}{log\+\_\+debug}}(fmt, ...)~\+\_\+log (\mbox{\hyperlink{log_8h_ac91d55174d383848b976a34de843748eab9f002c6ffbfd511da8090213227454e}{LOG\+\_\+\+DEBUG}}, \char`\"{}DEBUG\+: \%s\+: \char`\"{} fmt \char`\"{}\textbackslash{}n\char`\"{}, \+\_\+\+\_\+\+FILE\+\_\+\+\_\+, \#\#\+\_\+\+\_\+\+VA\+\_\+\+ARGS\+\_\+\+\_\+)
+\begin{DoxyCompactList}\small\item\em Printf-\/like function that prints a debug message to stderr. A newline is appended to the resulting message. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{log_8h_a35b816bc17d7683cb333439a2a17cecf}\label{log_8h_a35b816bc17d7683cb333439a2a17cecf}} 
+\#define \mbox{\hyperlink{log_8h_a35b816bc17d7683cb333439a2a17cecf}{log\+\_\+fatal}}(fmt, ...)~\{ \+\_\+log (\mbox{\hyperlink{log_8h_ac91d55174d383848b976a34de843748ea230506cce5c68c3bac5a821c42ed3473}{LOG\+\_\+\+ERROR}}, \char`\"{}FATAL\+: \%s\+: \%s\+: \char`\"{} fmt \char`\"{}\textbackslash{}n\char`\"{}, \+\_\+\+\_\+\+FILE\+\_\+\+\_\+, \+\_\+\+\_\+func\+\_\+\+\_\+, \#\#\+\_\+\+\_\+\+VA\+\_\+\+ARGS\+\_\+\+\_\+); goto fail; \}
+\begin{DoxyCompactList}\small\item\em Printf-\/like function that prints a fatal error to stderr and then jumps to the \textquotesingle{}fail\textquotesingle{} label. A newline is appended to the resulting message. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{log_8h_ac91d55174d383848b976a34de843748e}{log\+\_\+level}} \{ \mbox{\hyperlink{log_8h_ac91d55174d383848b976a34de843748eabb2c17c44c343a8367060db4175f39ea}{LOG\+\_\+\+NORMAL}}
+, \mbox{\hyperlink{log_8h_ac91d55174d383848b976a34de843748ea230506cce5c68c3bac5a821c42ed3473}{LOG\+\_\+\+ERROR}}
+, \mbox{\hyperlink{log_8h_ac91d55174d383848b976a34de843748eab9f002c6ffbfd511da8090213227454e}{LOG\+\_\+\+DEBUG}}
+ \}
+\begin{DoxyCompactList}\small\item\em Describes the type of message to be sent. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This file provides logging functions 
+
+\doxysubsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{log_8h_ac91d55174d383848b976a34de843748e}\label{log_8h_ac91d55174d383848b976a34de843748e}} 
+\index{log.h@{log.h}!log\_level@{log\_level}}
+\index{log\_level@{log\_level}!log.h@{log.h}}
+\doxysubsubsection{\texorpdfstring{log\_level}{log\_level}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{log_8h_ac91d55174d383848b976a34de843748e}{log\+\_\+level}}}
+
+
+
+Describes the type of message to be sent. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LOG\_NORMAL@{LOG\_NORMAL}!log.h@{log.h}}\index{log.h@{log.h}!LOG\_NORMAL@{LOG\_NORMAL}}}\mbox{\Hypertarget{log_8h_ac91d55174d383848b976a34de843748eabb2c17c44c343a8367060db4175f39ea}\label{log_8h_ac91d55174d383848b976a34de843748eabb2c17c44c343a8367060db4175f39ea}} 
+LOG\+\_\+\+NORMAL&Indicates a normal message. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LOG\_ERROR@{LOG\_ERROR}!log.h@{log.h}}\index{log.h@{log.h}!LOG\_ERROR@{LOG\_ERROR}}}\mbox{\Hypertarget{log_8h_ac91d55174d383848b976a34de843748ea230506cce5c68c3bac5a821c42ed3473}\label{log_8h_ac91d55174d383848b976a34de843748ea230506cce5c68c3bac5a821c42ed3473}} 
+LOG\+\_\+\+ERROR&Indicates an error message. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LOG\_DEBUG@{LOG\_DEBUG}!log.h@{log.h}}\index{log.h@{log.h}!LOG\_DEBUG@{LOG\_DEBUG}}}\mbox{\Hypertarget{log_8h_ac91d55174d383848b976a34de843748eab9f002c6ffbfd511da8090213227454e}\label{log_8h_ac91d55174d383848b976a34de843748eab9f002c6ffbfd511da8090213227454e}} 
+LOG\+\_\+\+DEBUG&Indicates a debug message. \\
+\hline
+
+\end{DoxyEnumFields}

@@ -1,0 +1,94 @@
+\hypertarget{convert_2source_8h}{}\doxysection{src/convert/source.h File Reference}
+\label{convert_2source_8h}\index{src/convert/source.h@{src/convert/source.h}}
+{\ttfamily \#include $<$stddef.\+h$>$}\newline
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}../range/def.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../window/def.\+h\char`\"{}}\newline
+\doxysubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structconvert__source}{convert\+\_\+source}}
+\begin{DoxyCompactList}\small\item\em A generic source type. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef bool($\ast$ \mbox{\hyperlink{convert_2source_8h_af91ca96c7caf2cfb87e5eba7ea565bc8}{convert\+\_\+source\+\_\+update\+\_\+callback}}) (bool $\ast$error, \mbox{\hyperlink{structconvert__source}{convert\+\_\+source}} $\ast$target)
+\begin{DoxyCompactList}\small\item\em This callback is called when more bytes should be read into the given source. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{convert_2source_8h_a25742c1e0312566a117ca8b319ea0554}\label{convert_2source_8h_a25742c1e0312566a117ca8b319ea0554}} 
+typedef void($\ast$ \mbox{\hyperlink{convert_2source_8h_a25742c1e0312566a117ca8b319ea0554}{convert\+\_\+source\+\_\+clear\+\_\+callback}}) (\mbox{\hyperlink{structconvert__source}{convert\+\_\+source}} $\ast$target)
+\begin{DoxyCompactList}\small\item\em This callback is run in order to free any allocations to the given source before it is freed. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+static bool \mbox{\hyperlink{convert_2source_8h_a552ba618acb284844f1b18812754227a}{convert\+\_\+read}} (bool $\ast$error, \mbox{\hyperlink{structconvert__source}{convert\+\_\+source}} $\ast$interface)
+\begin{DoxyCompactList}\small\item\em Reads once from the given interface. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{convert_2source_8h_a0c7022060d767cb3ce5bbcd4eea23ebb}\label{convert_2source_8h_a0c7022060d767cb3ce5bbcd4eea23ebb}} 
+static void \mbox{\hyperlink{convert_2source_8h_a0c7022060d767cb3ce5bbcd4eea23ebb}{convert\+\_\+source\+\_\+clear}} (\mbox{\hyperlink{structconvert__source}{convert\+\_\+source}} $\ast$source)
+\begin{DoxyCompactList}\small\item\em Clears a source in preparation to free it. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{convert_2source_8h_a59e02ca4159c81d89983dd7ea579d65d}\label{convert_2source_8h_a59e02ca4159c81d89983dd7ea579d65d}} 
+void \mbox{\hyperlink{convert_2source_8h_a59e02ca4159c81d89983dd7ea579d65d}{convert\+\_\+source\+\_\+free}} (\mbox{\hyperlink{structconvert__source}{convert\+\_\+source}} $\ast$source)
+\begin{DoxyCompactList}\small\item\em Clears and then frees the given source. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{convert_2source_8h_af2be7299293481cfb3ac15c6c29e0235}\label{convert_2source_8h_af2be7299293481cfb3ac15c6c29e0235}} 
+bool \mbox{\hyperlink{convert_2source_8h_af2be7299293481cfb3ac15c6c29e0235}{convert\+\_\+fill\+\_\+alloc}} (bool $\ast$error, \mbox{\hyperlink{structconvert__source}{convert\+\_\+source}} $\ast$source)
+\begin{DoxyCompactList}\small\item\em Reads into the remaining unused bytes of the given source\textquotesingle{}s contents. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{convert_2source_8h_a466a8f2b272ebcfeb78bfe38fab5c004}\label{convert_2source_8h_a466a8f2b272ebcfeb78bfe38fab5c004}} 
+bool \mbox{\hyperlink{convert_2source_8h_a466a8f2b272ebcfeb78bfe38fab5c004}{convert\+\_\+fill\+\_\+minimum}} (bool $\ast$error, \mbox{\hyperlink{structconvert__source}{convert\+\_\+source}} $\ast$source, size\+\_\+t limit)
+\begin{DoxyCompactList}\small\item\em Reads at least \textquotesingle{}limit\textquotesingle{} number of bytes into the given source\textquotesingle{}s contents. If 0 bytes are read, then false is returned and error is not set. If a nonzero number of bytes are read, but this number is still less than limit, then error is set to true and false is returned. Otherwise, this function returns true. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{convert_2source_8h_a72b88fb94df61e08c72309b18edec617}\label{convert_2source_8h_a72b88fb94df61e08c72309b18edec617}} 
+bool \mbox{\hyperlink{convert_2source_8h_a72b88fb94df61e08c72309b18edec617}{convert\+\_\+load\+\_\+all}} (\mbox{\hyperlink{structconvert__source}{convert\+\_\+source}} $\ast$source)
+\begin{DoxyCompactList}\small\item\em Loads bytes into the source\textquotesingle{}s contents until the source is exhausted. Returns true if no error occured, and false otherwise. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{convert_2source_8h_a2f4f2b6addc237e719a81599f3b3e887}\label{convert_2source_8h_a2f4f2b6addc237e719a81599f3b3e887}} 
+bool \mbox{\hyperlink{convert_2source_8h_a2f4f2b6addc237e719a81599f3b3e887}{convert\+\_\+pull\+\_\+max}} (bool $\ast$error, \mbox{\hyperlink{unionrange__const__unsigned__char}{range\+\_\+const\+\_\+unsigned\+\_\+char}} $\ast$result, \mbox{\hyperlink{structconvert__source}{convert\+\_\+source}} $\ast$source, size\+\_\+t limit)
+\begin{DoxyCompactList}\small\item\em Attempts to read \textquotesingle{}limit\textquotesingle{} bytes from the source, and then assigns result to point to at most \textquotesingle{}limit\textquotesingle{} bytes at the beginning of the source. The bytes returned in \textquotesingle{}result\textquotesingle{} will be consumed from the source\textquotesingle{}s contents. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{convert_2source_8h_abe228e126a9a0a984775e50e2dea4b50}\label{convert_2source_8h_abe228e126a9a0a984775e50e2dea4b50}} 
+bool \mbox{\hyperlink{convert_2source_8h_abe228e126a9a0a984775e50e2dea4b50}{convert\+\_\+grow}} (bool $\ast$error, \mbox{\hyperlink{structconvert__source}{convert\+\_\+source}} $\ast$source, size\+\_\+t count)
+\begin{DoxyCompactList}\small\item\em Attempts to read \textquotesingle{}count\textquotesingle{} more bytes onto the end of the given source\textquotesingle{}s contents. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{convert_2source_8h_ac31eecbd4a3c2dea769528a2869d69ad}\label{convert_2source_8h_ac31eecbd4a3c2dea769528a2869d69ad}} 
+bool \mbox{\hyperlink{convert_2source_8h_ac31eecbd4a3c2dea769528a2869d69ad}{convert\+\_\+skip\+\_\+bytes}} (bool $\ast$error, \mbox{\hyperlink{structconvert__source}{convert\+\_\+source}} $\ast$source, size\+\_\+t count)
+\begin{DoxyCompactList}\small\item\em Skips ahead in the source stream by \textquotesingle{}count\textquotesingle{} bytes, discarding the skipped bytes. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Provides an interface for reading bytes from an abstracted stream into a window. 
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{convert_2source_8h_af91ca96c7caf2cfb87e5eba7ea565bc8}\label{convert_2source_8h_af91ca96c7caf2cfb87e5eba7ea565bc8}} 
+\index{source.h@{source.h}!convert\_source\_update\_callback@{convert\_source\_update\_callback}}
+\index{convert\_source\_update\_callback@{convert\_source\_update\_callback}!source.h@{source.h}}
+\doxysubsubsection{\texorpdfstring{convert\_source\_update\_callback}{convert\_source\_update\_callback}}
+{\footnotesize\ttfamily typedef bool($\ast$ convert\+\_\+source\+\_\+update\+\_\+callback) (bool $\ast$error, \mbox{\hyperlink{structconvert__source}{convert\+\_\+source}} $\ast$target)}
+
+
+
+This callback is called when more bytes should be read into the given source. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em error} & Should be set to true if an error occurs \\
+\hline
+{\em target} & The target source \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if further bytes may be read, false if the stream ended with this call or an error occurred. 
+\end{DoxyReturn}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{convert_2source_8h_a552ba618acb284844f1b18812754227a}\label{convert_2source_8h_a552ba618acb284844f1b18812754227a}} 
+\index{source.h@{source.h}!convert\_read@{convert\_read}}
+\index{convert\_read@{convert\_read}!source.h@{source.h}}
+\doxysubsubsection{\texorpdfstring{convert\_read()}{convert\_read()}}
+{\footnotesize\ttfamily static bool convert\+\_\+read (\begin{DoxyParamCaption}\item[{bool $\ast$}]{error,  }\item[{\mbox{\hyperlink{structconvert__source}{convert\+\_\+source}} $\ast$}]{interface }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Reads once from the given interface. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em error} & Will be set to true if an error occurs \\
+\hline
+{\em interface} & The source to read from \\
+\hline
+\end{DoxyParams}
